@@ -1,5 +1,8 @@
 'use strict';
 
+var notepadDivElement = document.getElementsByClassName('notepad')[0];
+
+
 /*-----------------------------------------------------------------*/
 /*-----------------defining all the functions----------------------*/
 /*-----------------------------------------------------------------*/
@@ -61,9 +64,36 @@ function clearElementsOnPage()
   // browser.tabs.reload();
 }
 
+//TODO: make a function that collect all data from a local storage and return a big text
+function renderDataToText()
+{
+  var text = '';
+  var newLine = '\n';
 
+  // size of local storage
+  var entriesSize = localStorage.length;
 
+  // running through each entry
+  for (var i=0 ; i < entriesSize; i++)
+  {
+    // for each entry creating a temporary key
+    var tmpKey = 'backnote' + i;
 
+    // and recieving a temporary data
+    var tmpData = localStorage.getItem(tmpKey);
+
+    // adding it to our text and a new line after it
+    text += tmpData + newLine;
+
+    return text;
+  }
+}
+
+//TODO: make a function that pull all that data into a notepad class element
+function showOnNotepad()
+{
+
+}
 
 
 
