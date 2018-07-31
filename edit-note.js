@@ -1,12 +1,8 @@
 'use strict';
 
-document.title = 'Backnote';
-
-
-
-
-
-
+/*-----------------------------------------------------------------*/
+/*-----------------defining all the functions----------------------*/
+/*-----------------------------------------------------------------*/
 function renderData()
 {
   // need to clear physical elements on a page and rerender them again with new data
@@ -40,7 +36,7 @@ function clearData()
 {
   // clear physical elements
   clearElementsOnPage();
-  
+
   // clear storage
   localStorage.clear();
 
@@ -74,10 +70,13 @@ function clearElementsOnPage()
 
 
 // add a listener to a clear button
-document.getElementById('clear-note').addEventListener('click', clearData);
+// document.getElementById('clear-note').addEventListener('click', clearData);
 
 // add a listener to a download button
-document.getElementById('save-note').addEventListener('click', renderData);
+// document.getElementById('save-note').addEventListener('click', renderData);
 
 
-renderData();
+// renderData();
+
+
+// rSavedNotes();

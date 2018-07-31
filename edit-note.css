@@ -1,0 +1,20 @@
+
+body 
+{
+    /* 352D39 */
+  background: #352D39; 
+  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Slabo 5em', serif;
+}
+
+.notepad 
+{
+  background: #FFFCF9;
+  border: 1px solid #FFFCF9;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  min-height: 50em;
+  margin: 1em auto;
+  padding: 20px;
+  width: 50em;
+}
