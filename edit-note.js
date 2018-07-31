@@ -1,17 +1,18 @@
 'use strict';
 
 var notepadDivElement = document.getElementsByClassName('notepad')[0];
+var downloadButton = document.getElementById('downloadButton');
 
 /*-----------------------------------------------------------------*/
 /*-----------------defining all the functions----------------------*/
 /*-----------------------------------------------------------------*/
 
-// size of local storage
-var entriesSize = localStorage.length;
-
 // function to render saved text to a screen
 function renderTextToNotepad()
 {
+  // size of local storage
+  var entriesSize = localStorage.length;
+
   // running through each entry in local storage
   for (var i=0 ; i < entriesSize; i++)
   {
@@ -36,25 +37,49 @@ function renderTextToNotepad()
   }
 }
 
+/*-----------------------------------------------------------------*/
 
+
+
+/*-----------------------------------------------------------------*/
+// TODO: restyle css with CSS Grid
+// TODO: make file to download in .txt format
+// TODO: make input field editable (bold, italic, font size, crossed, etc)
+// TODO: add a shortcut keys
+
+// function to download note as txt
+// function download() 
+// {
+//   var element = document.createElement('a');
+//   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(testText));
+//   element.setAttribute('download', 'backnote.txt');
+
+//   element.style.display = 'none';
+//   document.body.appendChild(element);
+
+//   element.click();
+
+//   document.body.removeChild(element);
+// }
+
+// print or save as pdf
+function printPdf()
+{
+  downloadButton.style.display= "none";
+  window.print();
+}
+
+// adding a listener
+downloadButton.addEventListener('click', printPdf);
 
 /*-----------------------------------------------------------------*/
 /*------------------end of function definitions--------------------*/
 /*-----------------------------------------------------------------*/
 
-
-
 renderTextToNotepad();
 
-
-// add a listener to a clear button
-// document.getElementById('clear-note').addEventListener('click', clearData);
-
-// add a listener to a download button
-// document.getElementById('save-note').addEventListener('click', renderData);
+///////////////////////////////////////////////////////////////
+///////////////TEST TEST TEST TEST TEST TEST TEST//////////////
+///////////////////////////////////////////////////////////////
 
 
-// renderData();
-
-
-// rSavedNotes();
