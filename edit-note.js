@@ -42,9 +42,11 @@ function renderTextToNotepad()
 
 
 /*-----------------------------------------------------------------*/
+// TODO: restyle css with CSS Grid
 // TODO: make file to download in .txt format
 // TODO: make input field editable (bold, italic, font size, crossed, etc)
 // TODO: add a shortcut keys
+
 // function to download note as txt
 // function download() 
 // {
@@ -73,8 +75,6 @@ downloadButton.addEventListener('click', printPdf);
 /*-----------------------------------------------------------------*/
 /*------------------end of function definitions--------------------*/
 /*-----------------------------------------------------------------*/
-
-
 
 renderTextToNotepad();
 
