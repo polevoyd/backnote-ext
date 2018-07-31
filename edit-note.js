@@ -1,8 +1,7 @@
-"use strict";
+'use strict';
 
 document.title = 'Backnote';
-// find ul on a page
-var ulEl = document.getElementById('notesUl');
+
 
 
 
@@ -10,8 +9,11 @@ var ulEl = document.getElementById('notesUl');
 
 function renderData()
 {
+  // need to clear physical elements on a page and rerender them again with new data
+  clearElementsOnPage();
 
-  
+  // find ul on a page
+  var ulEl = document.getElementById('notesUl');
 
   // show size of local storage
   var entriesSize = localStorage.length;
@@ -32,27 +34,34 @@ function renderData()
   }
 
 }
-    
+
+// function to clear data from a local storage
 function clearData()
-{   
+{
+  // clear physical elements
+  clearElementsOnPage();
+  
   // clear storage
   localStorage.clear();
 
-  clearElementsOnPage();
+  
 
 }
 
 
 
 
-
+// function to clear html elements on a page
 function clearElementsOnPage()
 {
-  while (ulEl.hasChildNodes())
+  var ulElement = document.getElementById('notesUl');
+
+  while(ulElement.firstChild)
   {
-    ulEl.removeChild();
+    ulElement.removeChild(ulElement.firstChild);
   }
-  // reload last tab
+
+  // // reload last tab
   // browser.tabs.reload();
 }
 
@@ -65,7 +74,7 @@ function clearElementsOnPage()
 
 
 // add a listener to a clear button
-// document.getElementById('clear-note').addEventListener('click', clearData);
+document.getElementById('clear-note').addEventListener('click', clearData);
 
 // add a listener to a download button
 document.getElementById('save-note').addEventListener('click', renderData);
