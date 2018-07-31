@@ -2,75 +2,49 @@
 
 var notepadDivElement = document.getElementsByClassName('notepad')[0];
 
-
 /*-----------------------------------------------------------------*/
 /*-----------------defining all the functions----------------------*/
 /*-----------------------------------------------------------------*/
 
+// size of local storage
+var entriesSize = localStorage.length;
 
-// // function to clear data from a local storage
-// function clearData()
-// {
-//   // clear physical elements
-//   clearElementsOnPage();
-
-//   // clear storage
-//   localStorage.clear();
-
-  
-
-// }
-
-
-
-
-// // function to clear html elements on a page
-// function clearElementsOnPage()
-// {
-//   var ulElement = document.getElementById('notesUl');
-
-//   while(ulElement.firstChild)
-//   {
-//     ulElement.removeChild(ulElement.firstChild);
-//   }
-
-//   // // reload last tab
-//   // browser.tabs.reload();
-// }
-
-//TODO: make a function that collect all data from a local storage and return a big text
-function renderDataToText()
+// function to render saved text to a screen
+function renderTextToNotepad()
 {
-  var text = '';
-  var newLine = '\n';
-
-  // size of local storage
-  var entriesSize = localStorage.length;
-
-  // running through each entry
+  // running through each entry in local storage
   for (var i=0 ; i < entriesSize; i++)
   {
-    // for each entry creating a temporary key
+  // for each entry creating a temporary key
     var tmpKey = 'backnote' + i;
 
     // and recieving a temporary data
-    var tmpData = localStorage.getItem(tmpKey);
+    var tmpData = localStorage[tmpKey];
+
+    // on last element need to add '\n' before start with
+    // a new line
+    if (i === entriesSize-1)
+    {
+      notepadDivElement.innerText += '\n';
+    }
 
     // adding it to our text and a new line after it
-    text += tmpData + newLine;
-
-    return text;
+    // notepadDivElement.innerText += '\r\n';
+    notepadDivElement.innerText += tmpData;
+    notepadDivElement.innerText += '\n';
+  
   }
 }
 
-//TODO: make a function that pull all that data into a notepad class element
-function showOnNotepad()
-{
-  notepadDivElement.innerHTML = renderDataToText();
-}
+
+
+/*-----------------------------------------------------------------*/
+/*------------------end of function definitions--------------------*/
+/*-----------------------------------------------------------------*/
 
 
 
+renderTextToNotepad();
 
 
 // add a listener to a clear button

@@ -1,4 +1,24 @@
 
+/* ------------fonts------------ */
+
+/* 
+font-family: 'Slabo 27px', serif;
+font-family: 'Poppins', sans-serif; 
+*/
+
+/* ----------colors------------- */
+
+/* 
+FF6978 - pink
+FFFCF9 - white 
+B1EDE8 - blue 
+6D435A - purple
+352D39 - dark purple 
+*/
+
+/* ----------------------------- */
+
+
 body 
 {
     /* 352D39 */
@@ -18,3 +38,5 @@ body
   padding: 20px;
   width: 50em;
 }
+
+
