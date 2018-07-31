@@ -33,10 +33,19 @@ body
   border: 1px solid #FFFCF9;
   border-radius: 5px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
-  min-height: 50em;
+  min-height: 600px;
   margin: 1em auto;
   padding: 20px;
-  width: 50em;
+  width: 600px;
+}
+
+#size-plus 
+{
+
+  border: 1px solid #FFFCF9;
+  border-radius: 5px;
+
+
 }
 
 

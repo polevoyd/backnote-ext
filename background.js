@@ -1,9 +1,11 @@
-
 'use strict';
 
 // counter
 var counter = 0;
 
+/*-----------------------------------------------------------------*/
+/*-----------------defining all the functions----------------------*/
+/*-----------------------------------------------------------------*/
 
 // function to execute on icon click (a tab opening)
 function openEditNotesTab() 
@@ -12,19 +14,6 @@ function openEditNotesTab()
   browser.tabs.create({url: "/edit-note.html"});
   
 }
-
-/*-----------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
 
 // function to execute on a context menu click (save selected text)
 function saveSelectedText(e) 
@@ -36,22 +25,8 @@ function saveSelectedText(e)
   var tempKey = 'backnote' + counter;
   counter++;
   localStorage.setItem(tempKey, text);
-
- 
-
 }
 
-
-
-
-
-
-
-
-
-
-
-/*-----------------------------------------------------------------------*/
 // adding listener to our button on top right
 browser.browserAction.onClicked.addListener(openEditNotesTab);
 
@@ -65,7 +40,9 @@ browser.contextMenus.create(
     title: "Save to backnotes",
   });
 
-  
+/*-----------------------------------------------------------------*/
+/*------------------end of function definitions--------------------*/
+/*-----------------------------------------------------------------*/
 
 
 
