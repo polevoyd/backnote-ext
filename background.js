@@ -29,16 +29,15 @@ function openEditNotesTab()
 // function to execute on a context menu click (save selected text)
 function saveSelectedText(e) 
 {
-    // text to save
-    var text = e.selectionText.toString();
+  // text to save
+  var text = e.selectionText.toString();
 
-    // just adding it to a local storage each time with different key (backnote + counter)
-    var tempKey = 'backnote' + counter;
-    counter++;
-    localStorage.setItem(tempKey, text);
+  // just adding it to a local storage each time with different key (backnote + counter)
+  var tempKey = 'backnote' + counter;
+  counter++;
+  localStorage.setItem(tempKey, text);
 
-    // reload last tab
-    browser.tabs.reload();
+ 
 
 }
 

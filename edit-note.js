@@ -24,3 +24,18 @@ for (var i=0 ; i < entriesSize; i++)
   ulEl.appendChild(liEl);
 }
     
+function clearNote()
+{   
+  // clear storage
+  localStorage.clear();
+    
+  // reload last tab
+  browser.tabs.reload();
+
+}
+
+
+
+// add a listener to a clear button
+document.getElementById('clear-note').addEventListener('click', clearNote);
+
