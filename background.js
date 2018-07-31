@@ -8,15 +8,15 @@ var counter = 0;
 /*-----------------------------------------------------------------*/
 
 // function to execute on icon click (a tab opening)
-function openEditNotesTab() 
+function openEditNotesTab()
 {
   // open a backnote tab
-  browser.tabs.create({url: "/edit-note.html"});
-  
+  browser.tabs.create({url: '/edit-note.html'});
+
 }
 
 // function to execute on a context menu click (save selected text)
-function saveSelectedText(e) 
+function saveSelectedText(e)
 {
   // text to save
   var text = e.selectionText.toString();
@@ -36,8 +36,8 @@ browser.contextMenus.onClicked.addListener(saveSelectedText);
 // Add a context menu action on selected text on a page
 browser.contextMenus.create(
   {
-    id: "save-note",
-    title: "Save to backnotes",
+    id: 'save-note',
+    title: 'Save to backnotes'
   });
 
 /*-----------------------------------------------------------------*/
@@ -46,4 +46,8 @@ browser.contextMenus.create(
 
 
 
+
+///////////////////////////////////////////////////////////////
+///////////////TEST TEST TEST TEST TEST TEST TEST//////////////
+///////////////////////////////////////////////////////////////
 
