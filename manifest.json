@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "backnote",
+  "version": "1.0",
+
+
+  "icons": 
+  {
+    "16": "images/icon16.png",
+    "48": "images/icon.png"
+  },
+
+  "browser_action": 
+  {
+    "default_icon": 
+    {
+      "48": "images/icon.png"
+    },
+    "default_title": "Saved notes"
+  },
+
+  "background": 
+  {
+    "scripts": ["background.js", "edit-note.js"]
+  },
+
+  "permissions": 
+  [
+    "tabs",
+    "activeTab",
+    "contextMenus",
+    "<all_urls>",
+    "storage"
+  ]
+}
+
