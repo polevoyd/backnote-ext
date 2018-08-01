@@ -39,12 +39,39 @@ body
   width: 600px;
 }
 
-#size-plus 
+#downloadButton 
 {
-
   border: 1px solid #FFFCF9;
   border-radius: 5px;
-
+  background-color: #FFFCF9;
+  width: 10em;
+  height: 5em;
 }
 
+body 
+{
+  margin: 40px;
+}
 
+.wrapper 
+{
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  grid-gap: 10px;
+  /* background-color: #fff; */
+  /* color: #444; */
+}
+
+.box 
+{
+  /* background-color: #444; */
+  /* color: #fff; */
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.box.d
+{
+  grid-column-start: span 3;
+  justify-self: center;
+}
