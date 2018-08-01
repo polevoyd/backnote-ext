@@ -33,7 +33,7 @@ function renderTextToNotepad()
     // notepadDivElement.innerText += '\r\n';
     notepadDivElement.innerText += tmpData;
     notepadDivElement.innerText += '\n';
-  
+
   }
 }
 
@@ -47,27 +47,12 @@ function renderTextToNotepad()
 // TODO: make input field editable (bold, italic, font size, crossed, etc)
 // TODO: add a shortcut keys
 
-// function to download note as txt
-// function download() 
-// {
-//   var element = document.createElement('a');
-//   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(testText));
-//   element.setAttribute('download', 'backnote.txt');
-
-//   element.style.display = 'none';
-//   document.body.appendChild(element);
-
-//   element.click();
-
-//   document.body.removeChild(element);
-// }
-
 // print or save as pdf
 function printPdf()
 {
-  downloadButton.style.display= "none";
+  downloadButton.style.display='none';
   window.print();
-  downloadButton.style.display= "block";
+  downloadButton.style.display='inline-block';
 }
 
 // adding a listener
@@ -82,5 +67,4 @@ renderTextToNotepad();
 ///////////////////////////////////////////////////////////////
 ///////////////TEST TEST TEST TEST TEST TEST TEST//////////////
 ///////////////////////////////////////////////////////////////
-
 
