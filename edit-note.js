@@ -1,7 +1,6 @@
 'use strict';
 
-// var notepadDivElement = document.getElementsByClassName('notepad')[0];
-var notepadDivElement = document.getElementById('notepad');
+var notepadDivElement = document.getElementsByClassName('notepad')[0];
 var downloadButton = document.getElementById('downloadButton');
 
 /*-----------------------------------------------------------------*/
@@ -68,6 +67,7 @@ function printPdf()
 {
   downloadButton.style.display= "none";
   window.print();
+  downloadButton.style.display= "block";
 }
 
 // adding a listener
