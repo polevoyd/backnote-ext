@@ -48,4 +48,6 @@ body
   height: 5em;
   border: 1px solid #FFFCF9;
   border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 2em;
 }
