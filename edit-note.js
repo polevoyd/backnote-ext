@@ -1,6 +1,7 @@
 'use strict';
 
-var notepadDivElement = document.getElementsByClassName('notepad')[0];
+// var notepadDivElement = document.getElementsByClassName('notepad')[0];
+var notepadDivElement = document.getElementById('notepad');
 var downloadButton = document.getElementById('downloadButton');
 
 /*-----------------------------------------------------------------*/
