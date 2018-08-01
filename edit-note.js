@@ -33,7 +33,6 @@ function renderTextToNotepad()
     // notepadDivElement.innerText += '\r\n';
     notepadDivElement.innerText += tmpData;
     notepadDivElement.innerText += '\n';
-
   }
 }
 

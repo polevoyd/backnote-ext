@@ -51,3 +51,16 @@ browser.contextMenus.create(
 ///////////////TEST TEST TEST TEST TEST TEST TEST//////////////
 ///////////////////////////////////////////////////////////////
 
+function jumpToGoogle() 
+{
+  browser.tabs.create({url: "https://developer.mozilla.org"});
+}
+
+// set listener for a command to run
+
+browser.commands.onCommand.addListener(jumpToGoogle);
+
+// same thing with arrow func
+// browser.commands.onCommand.addListener((command) => {
+//   browser.tabs.create({url: "https://developer.mozilla.org"});
+// });
