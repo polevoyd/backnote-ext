@@ -50,8 +50,10 @@ var commandName = 'toggle-feature';
 //TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST
 //TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST
 
-// Update the UI: set the value of the shortcut textbox.
 
+
+
+// updating a ui and setting current hotkeys value inside of textbox
 async function updateUI() 
 {
   let commands = await browser.commands.getAll();
@@ -64,9 +66,8 @@ async function updateUI()
   }
 }
 
+// updating a hotkeys by takinga value from a textbox
 
-// Update the shortcut based on the value in the textbox.
- 
 async function updateShortcut() 
 {
   await browser.commands.update({

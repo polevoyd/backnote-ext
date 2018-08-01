@@ -57,7 +57,6 @@ function jumpToGoogle()
 }
 
 // set listener for a command to run
-
 browser.commands.onCommand.addListener(jumpToGoogle);
 
 // same thing with arrow func

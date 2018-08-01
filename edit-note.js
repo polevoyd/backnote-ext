@@ -2,6 +2,7 @@
 
 var notepadDivElement = document.getElementsByClassName('notepad')[0];
 var downloadButton = document.getElementById('downloadButton');
+var clearButton = document.getElementById('clearButton');
 
 /*-----------------------------------------------------------------*/
 /*-----------------defining all the functions----------------------*/
@@ -46,6 +47,13 @@ function renderTextToNotepad()
 // TODO: make input field editable (bold, italic, font size, crossed, etc)
 // TODO: add a shortcut keys
 
+// clear text in a input field and reload page
+function clearText()
+{
+  localStorage.clear();
+  window.location.reload();
+}
+
 // print or save as pdf
 function printPdf()
 {
@@ -54,8 +62,9 @@ function printPdf()
   downloadButton.style.display='inline-block';
 }
 
-// adding a listener
+// adding a listeners
 downloadButton.addEventListener('click', printPdf);
+clearButton.addEventListener('click', clearText);
 
 /*-----------------------------------------------------------------*/
 /*------------------end of function definitions--------------------*/

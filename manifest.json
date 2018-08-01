@@ -34,7 +34,7 @@
 
   "commands": {
     "toggle-feature": {
-      "suggested_key": { "default": "Ctrl+Shift+U" },
+      "suggested_key": { "default": "Ctrl+Shift+V" },
       "description": "Send a 'toggle-feature' event to the extension"
     }
   },
