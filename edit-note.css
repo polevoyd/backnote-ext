@@ -25,6 +25,8 @@ body
   background: #352D39; 
   font-family: Helvetica, Arial, sans-serif;
   font-family: 'Slabo 5em', serif;
+  
+  text-align: center;
 }
 
 .notepad 
@@ -37,14 +39,15 @@ body
   margin: 1em auto;
   padding: 20px;
   width: 600px;
+  text-align: left;
 }
 
-#size-plus 
+#downloadButton
 {
-
+  width: 10em;
+  height: 5em;
   border: 1px solid #FFFCF9;
   border-radius: 5px;
-
 }
 
 
