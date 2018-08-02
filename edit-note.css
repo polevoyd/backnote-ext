@@ -8,6 +8,7 @@ font-family: 'Poppins', sans-serif;
 
 /* ----------colors------------- */
 
+/* -----FOR A NOTEPAD----- */
 /* 
 DBC2CF - THISTLE
 9FA2B2 - CADET GREY
@@ -15,6 +16,10 @@ DBC2CF - THISTLE
 2E4756 - DARK SLATE GRAY
 16262E - DARK GUNMETAL 
 */
+
+/* -----FOR A BALLS----- */
+
+/* look in balling.js  */
 
 /* ----------------------------- */
 
@@ -82,14 +87,14 @@ body
   background-color: #DBC2CF;
 }
 
- /* dangerous- test canvas  */
+ /* canvas  */
 
 body, html 
 {
   width: 100%;
   height: 100%;
   margin: 0px;
-  background-color: #262626;
+  background-color: #16262E;
 }
 
 canvas  

@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 var notepadDivElement = document.getElementsByClassName('notepad')[0];
 var downloadButton = document.getElementById('downloadButton');
 var clearButton = document.getElementById('clearButton');

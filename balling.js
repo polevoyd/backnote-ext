@@ -1,37 +1,51 @@
-// using library example from cp @@fuglywalrus
+'use strict';
+
+// using library example from CP @@fuglywalrus
 
 var canvas = document.querySelector('canvas');
 
+// dimensions of a canvas
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+// get a context to work with
 var c = canvas.getContext('2d');
+
+// set a canvas as a background 
 document.body.style.background = 'url(' + canvas.toDataURL() + ')';
 
-var colorArray = ['#105B63', '#FFFAD5', '#FFD34E', '#DB9E36', '#BD4932'];
+// array of colors for a balls
+var colorArray = ['#392B58', '#645E9D', '#6C969D', '#99D5C9', '#2D0320'];
 
-function Circle(x, y, dx, dy, radius) {
+// Circle object with coordinates, radiuses and colors (randomly selected from array)
+function Circle(x, y, dx, dy, radius) 
+{
   this.x = x;
   this.y = y;
   this.dx = dx;
   this.dy = dy;
   this.radius = radius;
-  this.minRadius = radius;
   this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
 
-  this.draw = function() {
+  // function to draw a vector of movement
+  this.draw = function() 
+  {
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
     c.fillStyle = this.color;
     c.fill();
   };
 
-  this.update = function() {
-    if (this.x + radius > innerWidth || this.x - this.radius < 0) {
+  // functions to update coordinates if balls hit a walls
+  this.update = function() 
+  {
+    if (this.x + radius > innerWidth || this.x - this.radius < 0) 
+    {
       this.dx = -this.dx;
     }
 
-    if (this.y + this.radius > innerHeight || this.y - this.radius < 0) {
+    if (this.y + this.radius > innerHeight || this.y - this.radius < 0) 
+    {
       this.dy = -this.dy;
     }
 
@@ -42,12 +56,16 @@ function Circle(x, y, dx, dy, radius) {
   };
 }
 
+// array of current balls on a screen
 var circleArray = [];
 
-function init() {
+// create an new array of balls and fill it with randomly generated objects
+function init() 
+{
   circleArray = [];
 
-  for (var i = 0; i < 800; i++) {
+  for (var i = 0; i < 800; i++) 
+  {
     var x = Math.random() * (innerWidth - radius * 3) + radius;
     var y = Math.random() * (innerHeight - radius * 3) + radius;
     var dx = Math.random() - 0.5;
@@ -58,16 +76,19 @@ function init() {
   }
 }
 
-function animate() {
+// make balls moving
+function animate() 
+{
   requestAnimationFrame(animate);
   c.clearRect(0, 0, innerWidth, innerHeight);
 
-  for (var i = 0; i < circleArray.length; i++) {
+  for (var i = 0; i < circleArray.length; i++) 
+  {
     circleArray[i].update();
   }
 }
 
+// Start a whole process
 init();
 animate();
-
 
