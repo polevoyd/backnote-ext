@@ -14,8 +14,17 @@ function renderTextLs()
   // size of local storage
   var entriesSize = localStorage.length;
 
+  // 'backnote'+i - a key for entry
+  var i = 0;
+
+  // run until meet an entry
+  while (!localStorage['backnote'+i])
+  {
+    i++;
+  }
+
   // running through each entry in local storage
-  for (var i=0 ; i < entriesSize; i++)
+  for (var k=0 ; k < entriesSize; k++)
   {
   // for each entry creating a temporary key
     var tmpKey = 'backnote' + i;
@@ -34,55 +43,58 @@ function renderTextLs()
     // notepadDivElement.innerText += '\r\n';
     notepadDivElement.innerText += tmpData;
     notepadDivElement.innerText += '\n';
+
+    // jump to next key
+    i++;
   }
 }
 
 /*-----------------------------------------------------------------*/
 
 // function to set an string to a clipboard
-function setStringToClipboard(str) 
-{
-  // creating an <textarea> element
-  var el = document.createElement('textarea');
-  // setting it's value to a string we will set to a clipboard
-  el.value = str;
-  // make it read-only (optional, but just to make sure)
-  el.setAttribute('readonly', '');
-  // moving it somewhere outside of screen so it will be invisible
-  el.style.position = 'absolute';
-  el.style.left = '-9999px';
-  // attaching it to a body
-  document.body.appendChild(el);
-  // checking if there is anything selected already, true - save it, false - not saving it (later)
-  var selected = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
-  // selecting a content inside of our <textarea>
-  el.select();
-  // copying it 
-  document.execCommand('copy');
-  // removing our <textarea> element
-  document.body.removeChild(el);
-  // checking if there been some content selected before
-  if (selected) 
-  {
-    // unselecting everything on a page
-    document.getSelection().removeAllRanges();
-    // restore an original selection
-    document.getSelection().addRange(selected);
-  }
-}
+// function setStringToClipboard(str) 
+// {
+//   // creating an <textarea> element
+//   var el = document.createElement('textarea');
+//   // setting it's value to a string we will set to a clipboard
+//   el.value = str;
+//   // make it read-only (optional, but just to make sure)
+//   el.setAttribute('readonly', '');
+//   // moving it somewhere outside of screen so it will be invisible
+//   el.style.position = 'absolute';
+//   el.style.left = '-9999px';
+//   // attaching it to a body
+//   document.body.appendChild(el);
+//   // checking if there is anything selected already, true - save it, false - not saving it (later)
+//   var selected = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+//   // selecting a content inside of our <textarea>
+//   el.select();
+//   // copying it 
+//   document.execCommand('copy');
+//   // removing our <textarea> element
+//   document.body.removeChild(el);
+//   // checking if there been some content selected before
+//   if (selected) 
+//   {
+//     // unselecting everything on a page
+//     document.getSelection().removeAllRanges();
+//     // restore an original selection
+//     document.getSelection().addRange(selected);
+//   }
+// }
 
 // function to render from clipboard
-function renderTextCb() 
-{
-  // find element to add text to
-  var notepadArea = document.getElementsByClassName('notepad')[0];
-  // focus on that window
-  notepadArea.focus();
-  // paste data
-  document.execCommand('paste');
-  // Setting empty space to cb (so we can paste only once)
-  // setStringToClipboard(' ');
-}
+// function renderTextCb() 
+// {
+//   // find element to add text to
+//   var notepadArea = document.getElementsByClassName('notepad')[0];
+//   // focus on that window
+//   notepadArea.focus();
+//   // paste data
+//   document.execCommand('paste');
+//   // Setting empty space to cb (so we can paste only once)
+//   // setStringToClipboard(' ');
+// }
 
 //------------------------------------------------------------------------------
 
@@ -96,7 +108,7 @@ function renderTextCb()
 function clearText()
 {
   notepadDivElement.textContent = '';
-  setStringToClipboard(' ');
+  // setStringToClipboard(' ');
   localStorage.clear();
 }
 
