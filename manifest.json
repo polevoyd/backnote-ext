@@ -1,8 +1,16 @@
 {
   "manifest_version": 2,
   "name": "backnote",
+  "description": "Press Ctrl+Shift+V to open backnote tab.",
   "version": "1.0",
+  "homepage_url": "https://github.com/polevoyd/backnote-ext",
 
+  "applications": {
+    "gecko": {
+      "id": "dmitry.polevoy@yahoo.com",
+      "strict_min_version": "60.0b5"
+    }
+  },
 
   "icons": 
   {
@@ -16,7 +24,7 @@
     {
       "48": "images/icon.png"
     },
-    "default_title": "Saved notes"
+    "default_title": "Backnote tab"
   },
 
   "background": 
@@ -24,13 +32,35 @@
     "scripts": ["background.js", "edit-note.js"]
   },
 
+  "commands": {
+    "backnote-text": {
+      "suggested_key": { "default": "Ctrl+Shift+V" },
+      "description": "Open backnote tab"
+    }
+  },
+
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  },
+
+  "content_scripts": 
+  [{
+    "matches": ["<all_urls>"],
+    "js": ["content-script.js"]
+  }],
+  
   "permissions": 
   [
+    
     "tabs",
     "activeTab",
     "contextMenus",
+    "clipboardWrite",
+    "clipboardRead",
     "<all_urls>",
     "storage"
+
   ]
 
   

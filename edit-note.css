@@ -18,7 +18,6 @@ B1EDE8 - blue
 
 /* ----------------------------- */
 
-
 body 
 {
     /* 352D39 */
@@ -42,7 +41,7 @@ body
   text-align: left;
 }
 
-#downloadButton
+.buttonsElements
 {
   width: 10em;
   height: 5em;

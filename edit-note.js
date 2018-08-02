@@ -2,14 +2,18 @@
 
 var notepadDivElement = document.getElementsByClassName('notepad')[0];
 var downloadButton = document.getElementById('downloadButton');
+var clearButton = document.getElementById('clearButton');
+
+
 
 /*-----------------------------------------------------------------*/
 /*-----------------defining all the functions----------------------*/
 /*-----------------------------------------------------------------*/
 
 // function to render saved text to a screen
-function renderTextToNotepad()
+function renderTextLs()
 {
+ 
   // size of local storage
   var entriesSize = localStorage.length;
 
@@ -33,12 +37,21 @@ function renderTextToNotepad()
     // notepadDivElement.innerText += '\r\n';
     notepadDivElement.innerText += tmpData;
     notepadDivElement.innerText += '\n';
-
   }
 }
 
 /*-----------------------------------------------------------------*/
 
+// function to paste it from cb
+// function renderTextCb() 
+// {
+//   // find element to add text to
+//   var notepadArea = document.getElementsByClassName('notepad')[0];
+//   // focus on that window
+//   notepadArea.focus();
+//   // paste data
+//   document.execCommand('paste');
+// }
 
 
 /*-----------------------------------------------------------------*/
@@ -46,6 +59,14 @@ function renderTextToNotepad()
 // TODO: make file to download in .txt format
 // TODO: make input field editable (bold, italic, font size, crossed, etc)
 // TODO: add a shortcut keys
+
+// clear text in a input field and reload page
+function clearText()
+{
+  notepadDivElement.textContent = '';
+  localStorage.clear();
+  window.location.reload();
+}
 
 // print or save as pdf
 function printPdf()
@@ -55,16 +76,18 @@ function printPdf()
   downloadButton.style.display='inline-block';
 }
 
-// adding a listener
+// adding a listeners
 downloadButton.addEventListener('click', printPdf);
+clearButton.addEventListener('click', clearText);
 
 /*-----------------------------------------------------------------*/
 /*------------------end of function definitions--------------------*/
 /*-----------------------------------------------------------------*/
 
-renderTextToNotepad();
+renderTextLs();
 
 ///////////////////////////////////////////////////////////////
 ///////////////TEST TEST TEST TEST TEST TEST TEST//////////////
 ///////////////////////////////////////////////////////////////
+
 
