@@ -43,15 +43,16 @@ function renderTextLs()
 /*-----------------------------------------------------------------*/
 
 // function to paste it from cb
-function renderTextCb() 
-{
-  // find element to add text to
-  var notepadArea = document.getElementsByClassName('notepad')[0];
-  // focus on that window
-  notepadArea.focus();
-  // paste data
-  document.execCommand('paste');
-}
+// function renderTextCb() 
+// {
+//   // find element to add text to
+//   var notepadArea = document.getElementsByClassName('notepad')[0];
+//   // focus on that window
+//   notepadArea.focus();
+//   // paste data
+//   document.execCommand('paste');
+// }
+
 
 /*-----------------------------------------------------------------*/
 // TODO: restyle css with CSS Grid
@@ -84,7 +85,6 @@ clearButton.addEventListener('click', clearText);
 /*-----------------------------------------------------------------*/
 
 renderTextLs();
-renderTextCb();
 
 ///////////////////////////////////////////////////////////////
 ///////////////TEST TEST TEST TEST TEST TEST TEST//////////////

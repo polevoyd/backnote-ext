@@ -12,13 +12,11 @@ function openEditNotesTab()
 {
   // open a backnote tab
   browser.tabs.create({url: '/edit-note.html'});
-
 }
 
 // function to execute on a context menu click (save selected text)
 function saveSelectedText(e)
 {
-  console.log({arguments})
   // text to save
   var text = e.selectionText.toString();
 
@@ -47,8 +45,6 @@ browser.commands.onCommand.addListener(openEditNotesTab);
 /*-----------------------------------------------------------------*/
 /*------------------end of function definitions--------------------*/
 /*-----------------------------------------------------------------*/
-
-
 
 
 ///////////////////////////////////////////////////////////////

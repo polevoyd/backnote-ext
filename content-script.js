@@ -10,7 +10,6 @@ function copySelection()
   }
 }
   
-
 // Add copySelection() as a listener to mouseup events.
 
 document.addEventListener('mouseup', copySelection);

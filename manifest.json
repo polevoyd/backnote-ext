@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "backnote",
-  "description": "Press Ctrl+Shift+V to backnote a highlighted text.",
+  "description": "Press Ctrl+Shift+V to open backnote tab.",
   "version": "1.0",
   "homepage_url": "https://github.com/polevoyd/backnote-ext",
 
@@ -24,7 +24,7 @@
     {
       "48": "images/icon.png"
     },
-    "default_title": "Saved notes"
+    "default_title": "Backnote tab"
   },
 
   "background": 
@@ -35,7 +35,7 @@
   "commands": {
     "backnote-text": {
       "suggested_key": { "default": "Ctrl+Shift+V" },
-      "description": "Backnote highlighted text"
+      "description": "Open backnote tab"
     }
   },
 
