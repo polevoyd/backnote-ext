@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "backnote",
-  "description": "Press Ctrl+Shift+U to send an event (Command+Shift+U on a Mac).",
+  "description": "Press Ctrl+Shift+V to backnote a highlighted text.",
   "version": "1.0",
   "homepage_url": "https://github.com/polevoyd/backnote-ext",
 
@@ -33,9 +33,9 @@
   },
 
   "commands": {
-    "toggle-feature": {
+    "backnote-text": {
       "suggested_key": { "default": "Ctrl+Shift+V" },
-      "description": "Send a 'toggle-feature' event to the extension"
+      "description": "Backnote highlighted text"
     }
   },
 
@@ -44,13 +44,23 @@
     "browser_style": true
   },
 
+  "content_scripts": 
+  [{
+    "matches": ["<all_urls>"],
+    "js": ["content-script.js"]
+  }],
+  
   "permissions": 
   [
+    
     "tabs",
     "activeTab",
     "contextMenus",
+    "clipboardWrite",
+    "clipboardRead",
     "<all_urls>",
     "storage"
+
   ]
 
   

@@ -11,8 +11,9 @@ var clearButton = document.getElementById('clearButton');
 /*-----------------------------------------------------------------*/
 
 // function to render saved text to a screen
-function renderTextToNotepad()
+function renderTextLs()
 {
+ 
   // size of local storage
   var entriesSize = localStorage.length;
 
@@ -41,7 +42,16 @@ function renderTextToNotepad()
 
 /*-----------------------------------------------------------------*/
 
-
+// function to paste it from cb
+function renderTextCb() 
+{
+  // find element to add text to
+  var notepadArea = document.getElementsByClassName('notepad')[0];
+  // focus on that window
+  notepadArea.focus();
+  // paste data
+  document.execCommand('paste');
+}
 
 /*-----------------------------------------------------------------*/
 // TODO: restyle css with CSS Grid
@@ -52,6 +62,7 @@ function renderTextToNotepad()
 // clear text in a input field and reload page
 function clearText()
 {
+  notepadDivElement.textContent = '';
   localStorage.clear();
   window.location.reload();
 }
@@ -72,9 +83,11 @@ clearButton.addEventListener('click', clearText);
 /*------------------end of function definitions--------------------*/
 /*-----------------------------------------------------------------*/
 
-renderTextToNotepad();
+renderTextLs();
+renderTextCb();
 
 ///////////////////////////////////////////////////////////////
 ///////////////TEST TEST TEST TEST TEST TEST TEST//////////////
 ///////////////////////////////////////////////////////////////
+
 

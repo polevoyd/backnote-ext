@@ -18,6 +18,7 @@ function openEditNotesTab()
 // function to execute on a context menu click (save selected text)
 function saveSelectedText(e)
 {
+  console.log({arguments})
   // text to save
   var text = e.selectionText.toString();
 
@@ -40,6 +41,9 @@ browser.contextMenus.create(
     title: 'Save to backnotes'
   });
 
+// set listener to open a tab with notes
+browser.commands.onCommand.addListener(openEditNotesTab);
+
 /*-----------------------------------------------------------------*/
 /*------------------end of function definitions--------------------*/
 /*-----------------------------------------------------------------*/
@@ -51,15 +55,5 @@ browser.contextMenus.create(
 ///////////////TEST TEST TEST TEST TEST TEST TEST//////////////
 ///////////////////////////////////////////////////////////////
 
-function jumpToGoogle() 
-{
-  browser.tabs.create({url: "https://developer.mozilla.org"});
-}
 
-// set listener for a command to run
-browser.commands.onCommand.addListener(jumpToGoogle);
 
-// same thing with arrow func
-// browser.commands.onCommand.addListener((command) => {
-//   browser.tabs.create({url: "https://developer.mozilla.org"});
-// });
