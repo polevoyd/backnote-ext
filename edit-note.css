@@ -8,51 +8,112 @@ font-family: 'Poppins', sans-serif;
 
 /* ----------colors------------- */
 
+/* -----FOR A NOTEPAD----- */
 /* 
-FF6978 - pink
-FFFCF9 - white 
-B1EDE8 - blue 
-6D435A - purple
-352D39 - dark purple 
+DBC2CF - THISTLE
+9FA2B2 - CADET GREY
+3C7A89 - TEAL BLUE
+2E4756 - DARK SLATE GRAY
+16262E - DARK GUNMETAL 
 */
+
+/* -----FOR A BALLS----- */
+
+/* look in balling.js  */
 
 /* ----------------------------- */
 
 body 
 {
     /* 352D39 */
-  background: #352D39; 
+  background: #16262E; 
   font-family: Helvetica, Arial, sans-serif;
   font-family: 'Slabo 5em', serif;
-  
+  align-content: center;
   text-align: center;
+  margin-top: 3m;
+  margin-bottom: 3em;
 }
 
 .notepad 
 {
-  background: #FFFCF9;
-  border: 1px solid #FFFCF9;
+  background: #9FA2B2;
+  border: 1px solid #9FA2B2;
   border-radius: 5px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 0px #DBC2CF;
   min-height: 600px;
-  margin: 2em 2em;
+  max-width: 800px;
+  
   padding: 20px;
   /* width: 600px; */
   text-align: left;
+  transition: transform .1s;
+
+  margin: auto;
+  margin-top: 3em;
+  /* margin: 5em 5em; */
 }
 
 .buttonsElements
 {
   width: 10em;
   height: 5em;
-  border: 1px solid #FFFCF9;
+  background-color: #9FA2B2;
+  border: 1px solid #9FA2B2;
   border-radius: 5px;
   padding: 20px;
-  margin-bottom: 2em;
+  margin: 2em;
+
+  transition: transform .1s;
 }
 
 @page 
 {
-  size: auto;   /* auto is the initial value */
-  margin: 0mm;  /* this affects the margin in the printer settings */
+  size: auto;
+  margin: 0mm;
+}
+
+.buttonsElements:hover 
+{
+  transform: scale(1.1);
+  box-shadow: 0px 5px 20px #DBC2CF;
+  background-color: #DBC2CF;
+}
+
+.notepad:hover 
+{
+  transform: scale(1.05);
+  box-shadow: 0px 5px 20px #DBC2CF;
+  background-color: #DBC2CF;
+
+}
+
+ /* canvas  */
+
+body, html 
+{
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  background-color: #16262E;
+}
+
+canvas  
+{
+width:100%;
+height:100%;
+}
+
+.background
+{
+  color: #999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
+.blurred:hover
+{
+
 }

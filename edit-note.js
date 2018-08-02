@@ -98,7 +98,6 @@ function clearText()
   notepadDivElement.textContent = '';
   setStringToClipboard(' ');
   localStorage.clear();
-  window.location.reload();
 }
 
 // print or save as pdf
@@ -114,6 +113,31 @@ function printPdf()
 // adding a listeners
 downloadButton.addEventListener('click', printPdf);
 clearButton.addEventListener('click', clearText);
+
+// funtion to blur on hover
+function blurOnHover()
+{
+  document.querySelector('canvas').style.filter = 'blur(5px)';
+}
+
+// function to unblur on hover
+function unblurBack()
+{
+  document.querySelector('canvas').style.filter = 'blur(0px)';
+}
+
+// adding listeners for bluring/unbluring
+// add to notepad element
+notepadDivElement.addEventListener('mouseover', blurOnHover);
+notepadDivElement.addEventListener('mouseleave', unblurBack);
+
+// add to clear button
+clearButton.addEventListener('mouseover', blurOnHover);
+clearButton.addEventListener('mouseleave', unblurBack);
+
+// add to download button
+downloadButton.addEventListener('mouseover', blurOnHover);
+downloadButton.addEventListener('mouseleave', unblurBack);
 
 /*-----------------------------------------------------------------*/
 /*------------------end of function definitions--------------------*/

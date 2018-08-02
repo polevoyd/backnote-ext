@@ -1,3 +1,5 @@
+'use strict';
+
 // name of our command
 var commandName = 'backnote-text';
 
