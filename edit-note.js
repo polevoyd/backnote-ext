@@ -98,7 +98,6 @@ function clearText()
   notepadDivElement.textContent = '';
   setStringToClipboard(' ');
   localStorage.clear();
-  window.location.reload();
 }
 
 // print or save as pdf
