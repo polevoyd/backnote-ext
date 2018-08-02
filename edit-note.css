@@ -38,8 +38,7 @@ body
 .notepad 
 {
   background: #9FA2B2;
-  border: 1px solid #9FA2B2;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0px 0px 0px #DBC2CF;
   min-height: 600px;
   max-width: 800px;
@@ -52,6 +51,7 @@ body
   margin: auto;
   margin-top: 3em;
   /* margin: 5em 5em; */
+
 }
 
 .buttonsElements
@@ -82,7 +82,7 @@ body
 
 .notepad:hover 
 {
-  transform: scale(1.05);
+  transform: scale(1.025);
   box-shadow: 0px 5px 20px #DBC2CF;
   background-color: #DBC2CF;
 
@@ -111,9 +111,6 @@ height:100%;
   top: 0;
   left: 0;
   z-index: -100;
-}
-
-.blurred:hover
-{
-
+  transition-property: filter;
+  transition-duration: 0.5s;
 }

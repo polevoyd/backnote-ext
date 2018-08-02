@@ -105,9 +105,11 @@ function printPdf()
 {
   clearButton.style.display='none';
   downloadButton.style.display='none';
+  document.querySelector('canvas').style.display='none';
   window.print();
   clearButton.style.display='inline-block';
   downloadButton.style.display='inline-block';
+  document.querySelector('canvas').style.display='inline-block';
 }
 
 // adding a listeners
