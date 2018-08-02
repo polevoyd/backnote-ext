@@ -5,8 +5,10 @@
   "version": "1.0",
   "homepage_url": "https://github.com/polevoyd/backnote-ext",
 
-  "applications": {
-    "gecko": {
+  "applications": 
+  {
+    "gecko": 
+    {
       "id": "dmitry.polevoy@yahoo.com",
       "strict_min_version": "60.0b5"
     }
@@ -39,7 +41,8 @@
     }
   },
 
-  "options_ui": {
+  "options_ui": 
+  {
     "page": "options.html",
     "browser_style": true
   },
@@ -52,7 +55,6 @@
   
   "permissions": 
   [
-    
     "tabs",
     "activeTab",
     "contextMenus",
@@ -60,10 +62,6 @@
     "clipboardRead",
     "<all_urls>",
     "storage"
-
   ]
-
-  
-
 }
 

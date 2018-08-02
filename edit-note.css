@@ -25,7 +25,6 @@ DBC2CF - THISTLE
 
 body 
 {
-    /* 352D39 */
   background: #16262E; 
   font-family: Helvetica, Arial, sans-serif;
   font-family: 'Slabo 5em', serif;
@@ -51,7 +50,6 @@ body
   margin: auto;
   margin-top: 3em;
   /* margin: 5em 5em; */
-
 }
 
 .buttonsElements
@@ -85,7 +83,6 @@ body
   transform: scale(1.025);
   box-shadow: 0px 5px 20px #DBC2CF;
   background-color: #DBC2CF;
-
 }
 
  /* canvas  */
