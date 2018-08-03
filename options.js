@@ -11,10 +11,11 @@ var commandName = 'backnote-text';
 
 function updateShortcut() 
 {
-  browser.commands.update({
-    name: commandName,
-    shortcut: document.querySelector('#shortcut').value
-  });
+  browser.commands.update(
+    {
+      name: commandName,
+      shortcut: document.querySelector('#shortcut').value
+    });
 }
 
 // Reset the shortcut and update the textbox.

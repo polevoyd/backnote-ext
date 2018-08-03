@@ -42,7 +42,7 @@ function renderTextLs()
     // adding it to our text and a new line after it
     // notepadDivElement.innerText += '\r\n';
     notepadDivElement.innerText += tmpData;
-    notepadDivElement.innerText += '\n';
+    notepadDivElement.innerText += '\n\n';
 
     // jump to next key
     i++;
@@ -52,7 +52,7 @@ function renderTextLs()
 /*-----------------------------------------------------------------*/
 
 // function to set an string to a clipboard
-// function setStringToClipboard(str) 
+// function setStringToClipboard(str)
 // {
 //   // creating an <textarea> element
 //   var el = document.createElement('textarea');
@@ -69,12 +69,12 @@ function renderTextLs()
 //   var selected = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
 //   // selecting a content inside of our <textarea>
 //   el.select();
-//   // copying it 
+//   // copying it
 //   document.execCommand('copy');
 //   // removing our <textarea> element
 //   document.body.removeChild(el);
 //   // checking if there been some content selected before
-//   if (selected) 
+//   if (selected)
 //   {
 //     // unselecting everything on a page
 //     document.getSelection().removeAllRanges();
@@ -84,7 +84,7 @@ function renderTextLs()
 // }
 
 // function to render from clipboard
-// function renderTextCb() 
+// function renderTextCb()
 // {
 //   // find element to add text to
 //   var notepadArea = document.getElementsByClassName('notepad')[0];
@@ -164,4 +164,11 @@ renderTextLs();
 ///////////////TEST TEST TEST TEST TEST TEST TEST//////////////
 ///////////////////////////////////////////////////////////////
 
-
+// // function to refresh a page each time we switch to it
+// function handleActivated(activeInfo)
+// {
+//   console.log(activeInfo);
+//   // window.location.reload(true);
+// }
+// // attach listener to on activation method
+// browser.tabs.onActivated.addListener(handleActivated);
