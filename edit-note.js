@@ -14,39 +14,44 @@ function renderTextLs()
   // size of local storage
   var entriesSize = localStorage.length;
 
+  // variable to count printed elements
+  var printedCounter = 0;
+
   // 'backnote'+i - a key for entry
   var i = 0;
 
-  // run until meet an entry
-  while (!localStorage['backnote'+i])
+  // while printed is less that amount of entries
+  while (printedCounter < entriesSize)
   {
-    i++;
-  }
-
-  // running through each entry in local storage
-  for (var k=0 ; k < entriesSize; k++)
-  {
-  // for each entry creating a temporary key
+    // for each entry creating a temporary key
     var tmpKey = 'backnote' + i;
+    var tmpData = localStorage.getItem(tmpKey);
 
-    // and recieving a temporary data
-    var tmpData = localStorage[tmpKey];
-
-    // on last element need to add '\n' before start with
-    // a new line
-    if (i === entriesSize-1)
+    // only print if its not undefined or null
+    if (tmpData !== undefined && tmpData !== null)
     {
-      notepadDivElement.innerText += '\n';
+      // on last element need to add '\n' before start with
+      // a new line
+      if (i === entriesSize-1)
+      {
+        notepadDivElement.innerText += '\n';
+      }
+
+      // adding it to our text and a new line after it
+      // notepadDivElement.innerText += '\r\n';
+      notepadDivElement.innerText += tmpData;
+      notepadDivElement.innerText += '\n\n';
+
+      // increment printed
+      printedCounter++;
     }
-
-    // adding it to our text and a new line after it
-    // notepadDivElement.innerText += '\r\n';
-    notepadDivElement.innerText += tmpData;
-    notepadDivElement.innerText += '\n\n';
-
+    
     // jump to next key
     i++;
   }
+  
+  // clean storage so it does not repeats
+  localStorage.clear();
 }
 
 /*-----------------------------------------------------------------*/
@@ -157,8 +162,15 @@ downloadButton.addEventListener('mouseleave', unblurBack);
 /*------------------end of function definitions--------------------*/
 /*-----------------------------------------------------------------*/
 
-renderTextLs();
+// random crash on load???
+// renderTextLs();
+//////////////////////////
 // renderTextCb();
+
+notepadDivElement.addEventListener('mouseover', renderTextLs);
+
+
+
 
 ///////////////////////////////////////////////////////////////
 ///////////////TEST TEST TEST TEST TEST TEST TEST//////////////
