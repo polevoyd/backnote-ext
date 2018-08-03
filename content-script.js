@@ -1,18 +1,18 @@
 'use strict';
 
-// // copy the selected text to clipboard
-// function copySelection() 
-// {
-//   var selectedText = window.getSelection().toString().trim();
+// copy the selected text to clipboard
+function copySelection() 
+{
+  var selectedText = window.getSelection().toString().trim();
   
-//   if (selectedText) 
-//   {
-//     document.execCommand('Copy');
-//   }
-// }
+  if (selectedText) 
+  {
+    document.execCommand('Copy');
+  }
+}
   
-// // Add copySelection() as a listener to mouseup events.
-// document.addEventListener('mouseup', copySelection);
+// Add copySelection() as a listener to mouseup events.
+document.addEventListener('mouseup', copySelection);
 
 
 
