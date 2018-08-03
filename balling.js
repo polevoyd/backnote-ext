@@ -1,6 +1,6 @@
 'use strict';
 
-// using library example from CP @@fuglywalrus
+// using library example from CodePen @@fuglywalrus
 
 var canvas = document.querySelector('canvas');
 
