@@ -15,7 +15,7 @@ var c = canvas.getContext('2d');
 document.body.style.background = 'url(' + canvas.toDataURL() + ')';
 
 // array of colors for a balls
-var colorArray = ['#392B58', '#645E9D', '#6C969D', '#99D5C9', '#2D0320'];
+var colorArray = ['#392B58', '#645E9D', '#6C969D', '#99D5C9', '#A663CC'];
 
 // Circle object with coordinates, radiuses and colors (randomly selected from array)
 function Circle(x, y, dx, dy, radius) 

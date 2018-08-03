@@ -99,6 +99,8 @@ function renderTextCb()
   document.execCommand('paste');
   // Setting empty space to cb (so we can paste only once)
   setStringToClipboard(' ');
+  // add an empty separator line
+  notepadDivElement.innerText += '\n\n';
 }
 
 //------------------------------------------------------------------------------
@@ -113,7 +115,7 @@ function renderTextCb()
 function clearText()
 {
   notepadDivElement.textContent = '';
-  setStringToClipboard(' ');
+  // setStringToClipboard(' ');
   localStorage.clear();
 }
 
@@ -168,7 +170,7 @@ downloadButton.addEventListener('mouseleave', unblurBack);
 // renderTextCb();
 
 // render from a local storage
-notepadDivElement.addEventListener('mouseover', renderTextLs);
+// notepadDivElement.addEventListener('mouseover', renderTextLs);
 
 // render from a clipboard
 notepadDivElement.addEventListener('mouseover', renderTextCb);
