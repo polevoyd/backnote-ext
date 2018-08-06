@@ -1,4 +1,5 @@
 
+
 /* ------------fonts------------ */
 
 /* 
@@ -25,34 +26,24 @@ DBC2CF - THISTLE
 
 body 
 {
-  background: #16262E; 
   font-family: Helvetica, Arial, sans-serif;
   font-family: 'Slabo 5em', serif;
   align-content: center;
   text-align: center;
-  margin-top: 3m;
-  margin-bottom: 3em;
+
 }
 
 .notepad 
 {
   background: #9FA2B2;
-  border-radius: 10px;
-  box-shadow: 0px 0px 0px #DBC2CF;
-  min-height: 600px;
-  max-width: 800px;
-  
-  padding: 20px;
-  /* width: 600px; */
+  min-height: 500px;
   text-align: left;
-  transition: transform .1s;
 
-  margin: auto;
-  margin-top: 3em;
-  /* margin: 5em 5em; */
+  width:100%;
+  height:100%;
 }
 
-.buttonsElements
+/* .buttonsElements
 {
   width: 10em;
   height: 5em;
@@ -62,46 +53,30 @@ body
   padding: 20px;
   margin: 2em;
 
-  transition: transform .1s;
-}
+  /* transition: transform .1s; */
+/* } */
 
-@page 
+/* @page 
 {
   size: auto;
   margin: 0mm;
-}
+} */
 
-.buttonsElements:hover 
+/* .buttonsElements:hover 
 {
   transform: scale(1.1);
   box-shadow: 0px 5px 20px #DBC2CF;
   background-color: #DBC2CF;
-}
+} */
 
-.notepad:hover 
+/* .notepad:hover 
 {
   transform: scale(1.025);
   box-shadow: 0px 5px 20px #DBC2CF;
   background-color: #F6F2FF;
-}
+} */
 
- /* canvas  */
-
-body, html 
-{
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  background-color: #16262E;
-}
-
-canvas  
-{
-width:100%;
-height:100%;
-}
-
-.background
+/* .background
 {
   color: #999999;
   position: fixed;
@@ -110,6 +85,6 @@ height:100%;
   z-index: -100;
   transition-property: filter;
   transition-duration: 0.5s;
-}
+} */
 
 
