@@ -28,6 +28,15 @@ function createOrSwitchToBacknoteTab()
     {
       // moving backnote tab to last position
       var moving = browser.tabs.move(backnoteTabId, {index: -1});
+
+      /*-------------------------- TEST AREA ------------------------------- */
+      /////////////////////////////////////////////////////////////////////////
+      ///
+
+      
+      
+      ///
+      /////////////////////////////////////////////////////////////////////////
     }
     else
     {
