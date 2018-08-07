@@ -5,6 +5,10 @@ var downloadButton = document.getElementById('downloadButton');
 var clearButton = document.getElementById('clearButton');
 
 /*-----------------------------------------------------------------*/
+// first line just an empty one
+notepadDivElement.innerText += '\n';
+
+/*-----------------------------------------------------------------*/
 /*-----------------defining all the functions----------------------*/
 /*-----------------------------------------------------------------*/
 
@@ -95,12 +99,12 @@ function renderTextCb()
   notepadDivElement.innerText += '\n';
 }
 
+/*-----------------------------------------------------------------*/
 
-
-
+// paste a data
 function pasteData()
 {
-  window.execCommand('paste');
+  document.execCommand('Paste');
 }
 
 
@@ -149,10 +153,13 @@ function printPdf()
 
 const stopPasting = event => 
 {
+  // setting a data from clipboard
   const data = event.clipboardData.getData('text');
 
+  // check if it's an empty space
   if (data === ' ')
   {
+    // if true, then do not paste
     return event.preventDefault();
   }
   else
@@ -166,9 +173,11 @@ const stopPasting = event =>
     // move caret to a new line two times
     notepadDivElement.innerText += '\n\n';
   }
-
 };
 
+// on paste go through our filter
 document.addEventListener('paste', stopPasting);
 // render from a clipboard on a mouseover
-notepadDivElement.addEventListener('mouseover', stopPasting);
+document.addEventListener('mouseover', pasteData);
+
+
