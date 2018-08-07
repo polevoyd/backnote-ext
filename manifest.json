@@ -63,7 +63,8 @@
     "clipboardWrite",
     "clipboardRead",
     "<all_urls>",
-    "storage"
+    "storage",
+    "downloads"
   ]
 }
 

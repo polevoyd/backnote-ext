@@ -2,7 +2,6 @@
 
 var notepadDivElement = document.getElementsByClassName('notepad')[0];
 var downloadButton = document.getElementById('downloadButton');
-var clearButton = document.getElementById('clearButton');
 
 /*-----------------------------------------------------------------*/
 // first line just an empty one
@@ -88,7 +87,7 @@ function pasteData()
 
 /*-----------------------------------------------------------------*/
 // filtering a paste data
-const stopPasting = event => 
+const stopPasting = event =>
 {
   // setting a data from clipboard
   const data = event.clipboardData.getData('text');
@@ -116,45 +115,65 @@ const stopPasting = event =>
 // print or save as pdf
 function printPdf()
 {
-  // clearButton.style.display='none';
-  // downloadButton.style.display='none';
+  downloadButton.style.display='none';
 
-  // window.print();
-  // clearButton.style.display='inline-block';
-  // downloadButton.style.display='inline-block';
+  window.print();
+  downloadButton.style.display='inline-block';
 
+}
+/*-----------------------------------------------------------------*/
+// download note as backnote.txt 
+function downloadTxt()
+{
+  // get a text
+  let textFromNotepad = notepadDivElement.innerText;
+  // create a Blob object from it
+  var tempBlob = new Blob([textFromNotepad], {type: 'text/plain'});
+  // create a temporary URL
+  var tempURL = URL.createObjectURL(tempBlob);
+  // download that URL
+  browser.downloads.download(
+    {
+      url: tempURL,
+      filename: 'backnote.txt'
+    });
 }
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-
-
-
-
-
-
-
-// adding a listeners
-// downloadButton.addEventListener('click', printPdf);
-// clearButton.addEventListener('click', clearText);
-
-// render from a clipboard on a mouseover
-// notepadDivElement.addEventListener('mouseover', renderTextCb);
-
-
-
-/*-----------------------------------------------------------------*/
-/*------------------end of function definitions--------------------*/
-/*-----------------------------------------------------------------*/
-
-
-
+// listeners:
 // on paste go through our filter
 document.addEventListener('paste', stopPasting);
 // render from a clipboard on a mouseover
 document.addEventListener('mouseover', pasteData);
+// adding a listener to downloadButton
+downloadButton.addEventListener('click', downloadTxt);
+
+//////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
 
 
