@@ -89,16 +89,14 @@ function renderTextCb()
   document.execCommand('paste');
 
   // Setting empty space to cb (so we can paste only once)
-  // setStringToClipboard(' ');
-
-  DataTransferItemList.clear();
+  setStringToClipboard(' ');
 
   // add an empty separator line
   notepadDivElement.innerText += '\n';
 
   ///////////////////////////////////////////////////////////////
   
-  console.log();
+
 
 
 
@@ -161,3 +159,30 @@ notepadDivElement.addEventListener('mouseover', renderTextCb);
 /*-----------------------------------------------------------------*/
 /*------------------end of function definitions--------------------*/
 /*-----------------------------------------------------------------*/
+
+
+document.addEventListener('paste', function (e) 
+{
+  var tmpClipboardData = e.clipboardData.getData('text/plain');
+
+  // if (tmpClipboardData !== ' ')
+  // {
+  //   // find element to add text to
+  //   var notepadArea = document.getElementsByClassName('notepad')[0];
+  
+  //   // set caret to the end of that element
+  //   setEndOfContenteditable(notepadArea);
+
+  //   // paste data
+  //   document.execCommand('paste');
+
+  //   // add an empty separator line
+  //   notepadDivElement.innerText += '\n';
+
+  // }
+
+  console.log(e.clipboardData.getData('text/plain'));
+
+
+
+});
