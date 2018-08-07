@@ -51,7 +51,7 @@
 
   "content_scripts": 
   [{
-    "matches": ["<all_urls>"],
+    "matches": ["*://*/*"],
     "js": ["content-script.js"]
   }],
   
@@ -63,7 +63,8 @@
     "clipboardWrite",
     "clipboardRead",
     "<all_urls>",
-    "storage"
+    "storage",
+    "downloads"
   ]
 }
 

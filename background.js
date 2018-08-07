@@ -28,11 +28,29 @@ function createOrSwitchToBacknoteTab()
     {
       // moving backnote tab to last position
       var moving = browser.tabs.move(backnoteTabId, {index: -1});
+
+      // TODO: CORRECT SIZE AND ALIGNMENT AFTER OPENING
+      // to create a new window and put existing backnote tab in there
+      browser.windows.create(
+        {
+          tabId: backnoteTabId,
+          type: 'popup', // OR REGULAR WINDOW???
+          height: 720,
+          width: 480,
+        });
     }
     else
     {
       // IF PAGE NOT EXIST - CREATING IT
-      browser.tabs.create({url: '/edit-note.html'});
+      // browser.tabs.create({url: '/edit-note.html'});
+
+      browser.windows.create(
+        {
+          url: './edit-note.html',
+          type: 'popup', // OR REGULAR WINDOW????
+          height: 720,
+          width: 480,
+        });
     }
   });
 }
@@ -45,5 +63,5 @@ browser.browserAction.onClicked.addListener(createOrSwitchToBacknoteTab);
 browser.commands.onCommand.addListener(createOrSwitchToBacknoteTab);
 
 /*-----------------------------------------------------------------*/
-/*------------------end of function definitions--------------------*/
+/*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
