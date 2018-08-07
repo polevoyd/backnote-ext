@@ -26,7 +26,7 @@
     {
       "48": "images/icon.png"
     },
-    "default_title": "Backnote tab"
+    "default_title": "Backnote"
   },
 
   "background": 
@@ -34,10 +34,12 @@
     "scripts": ["background.js", "edit-note.js"]
   },
 
-  "commands": {
-    "backnote-text": {
+  "commands": 
+  {
+    "backnote-text": 
+    {
       "suggested_key": { "default": "Ctrl+Shift+V" },
-      "description": "Open backnote tab"
+      "description": "Open Backnote"
     }
   },
 

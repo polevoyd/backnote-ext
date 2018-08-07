@@ -1,18 +1,13 @@
 'use strict';
+// HERE:
+//-----------
+// COPY TO A CLIPBOARD
+// WITH ` AND MOUSEUP
 
-// copy the selected content to clipboard
+// copy the selected content to clipboard and a local storage
 function copySelection() 
 {
   var selectedText = window.getSelection().toString().trim();
-  
-  if (localStorage['backnote'])
-  {
-    localStorage['backnote'] += selectedText;
-  }
-  else
-  {
-    localStorage.setItem('backnote', selectedText);
-  }
 
   // if content is not empty - then copy it
   if (selectedText) 

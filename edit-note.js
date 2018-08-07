@@ -95,8 +95,27 @@ function renderTextCb()
   notepadDivElement.innerText += '\n';
 }
 
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*-----------------------------------------------------------------*/
+
 /*-----------------------------------------------------------------*/
+
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
@@ -128,18 +147,6 @@ function printPdf()
 notepadDivElement.addEventListener('mouseover', renderTextCb);
 
 
-
-// // funtion to blur on hover
-// function blurOnHover()
-// {
-//   document.querySelector('canvas').style.filter = 'blur(5px)';
-// }
-
-// // function to unblur on hover
-// function unblurBack()
-// {
-//   document.querySelector('canvas').style.filter = 'blur(0px)';
-// }
 
 /*-----------------------------------------------------------------*/
 /*------------------end of function definitions--------------------*/

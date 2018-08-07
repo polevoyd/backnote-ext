@@ -1,85 +1,21 @@
 
 
-/* ------------fonts------------ */
-
-/* 
-font-family: 'Slabo 27px', serif;
-font-family: 'Poppins', sans-serif; 
-*/
-
-/* ----------colors------------- */
-
-/* -----FOR A NOTEPAD----- */
-/* 
-DBC2CF - THISTLE
-9FA2B2 - CADET GREY
-3C7A89 - TEAL BLUE
-2E4756 - DARK SLATE GRAY
-16262E - DARK GUNMETAL 
-*/
-
-
 body 
 {
   font-family: Helvetica, Arial, sans-serif;
   font-family: 'Slabo 5em', serif;
   align-content: center;
   text-align: center;
+  margin: 0;
 
 }
 
 .notepad 
 {
-  background: #9FA2B2;
+  background: grey;
   min-height: 500px;
   text-align: left;
 
   width:100%;
   height:100%;
 }
-
-/* .buttonsElements
-{
-  width: 10em;
-  height: 5em;
-  background-color: #9FA2B2;
-  border: 1px solid #9FA2B2;
-  border-radius: 5px;
-  padding: 20px;
-  margin: 2em;
-
-  /* transition: transform .1s; */
-/* } */
-
-/* @page 
-{
-  size: auto;
-  margin: 0mm;
-} */
-
-/* .buttonsElements:hover 
-{
-  transform: scale(1.1);
-  box-shadow: 0px 5px 20px #DBC2CF;
-  background-color: #DBC2CF;
-} */
-
-/* .notepad:hover 
-{
-  transform: scale(1.025);
-  box-shadow: 0px 5px 20px #DBC2CF;
-  background-color: #F6F2FF;
-} */
-
-/* .background
-{
-  color: #999999;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -100;
-  transition-property: filter;
-  transition-duration: 0.5s;
-} */
-
-
