@@ -80,77 +80,14 @@ function setStringToClipboard(str)
 
 /*-----------------------------------------------------------------*/
 
-// render from clipboard
-function renderTextCb()
-{
-  // find element to add text to
-  var notepadArea = document.getElementsByClassName('notepad')[0];
-
-  // set caret to the end of that element
-  setEndOfContenteditable(notepadArea);
-
-  // paste data
-  document.execCommand('paste');
-
-  // Setting empty space to cb (so we can paste only once)
-  setStringToClipboard(' ');
-
-  // add an empty separator line
-  notepadDivElement.innerText += '\n';
-}
-
-/*-----------------------------------------------------------------*/
-
 // paste a data
 function pasteData()
 {
   document.execCommand('Paste');
 }
 
-
-
-
 /*-----------------------------------------------------------------*/
-
-/*-----------------------------------------------------------------*/
-
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-
-
-
-
-
-// print or save as pdf
-function printPdf()
-{
-  // clearButton.style.display='none';
-  // downloadButton.style.display='none';
-
-  // window.print();
-  // clearButton.style.display='inline-block';
-  // downloadButton.style.display='inline-block';
-
-}
-
-// adding a listeners
-// downloadButton.addEventListener('click', printPdf);
-// clearButton.addEventListener('click', clearText);
-
-// render from a clipboard on a mouseover
-// notepadDivElement.addEventListener('mouseover', renderTextCb);
-
-
-
-/*-----------------------------------------------------------------*/
-/*------------------end of function definitions--------------------*/
-/*-----------------------------------------------------------------*/
-
-
+// filtering a paste data
 const stopPasting = event => 
 {
   // setting a data from clipboard
@@ -174,6 +111,46 @@ const stopPasting = event =>
     notepadDivElement.innerText += '\n\n';
   }
 };
+/*-----------------------------------------------------------------*/
+
+// print or save as pdf
+function printPdf()
+{
+  // clearButton.style.display='none';
+  // downloadButton.style.display='none';
+
+  // window.print();
+  // clearButton.style.display='inline-block';
+  // downloadButton.style.display='inline-block';
+
+}
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+
+
+
+
+
+
+
+// adding a listeners
+// downloadButton.addEventListener('click', printPdf);
+// clearButton.addEventListener('click', clearText);
+
+// render from a clipboard on a mouseover
+// notepadDivElement.addEventListener('mouseover', renderTextCb);
+
+
+
+/*-----------------------------------------------------------------*/
+/*------------------end of function definitions--------------------*/
+/*-----------------------------------------------------------------*/
+
+
 
 // on paste go through our filter
 document.addEventListener('paste', stopPasting);

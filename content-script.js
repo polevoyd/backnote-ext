@@ -1,9 +1,10 @@
 'use strict';
-// HERE:
-//-----------
-// COPY TO A CLIPBOARD
-// WITH ` AND MOUSEUP
 
+/*-----------------------------------------------------------------*/
+/*-----------------defining all the functions----------------------*/
+/*-----------------------------------------------------------------*/
+
+//---------------------------------------------------------------------
 // copy the selected content to clipboard and a local storage
 function copySelection() 
 {
@@ -31,3 +32,7 @@ document.addEventListener('keydown', (event) =>
 
 // Add copySelection() as a listener to mouseup events.
 document.addEventListener('mouseup', copySelection);
+
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/

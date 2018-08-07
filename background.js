@@ -45,5 +45,5 @@ browser.browserAction.onClicked.addListener(createOrSwitchToBacknoteTab);
 browser.commands.onCommand.addListener(createOrSwitchToBacknoteTab);
 
 /*-----------------------------------------------------------------*/
-/*------------------end of function definitions--------------------*/
+/*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
