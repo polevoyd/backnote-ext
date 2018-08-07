@@ -35,8 +35,8 @@ function createOrSwitchToBacknoteTab()
         {
           tabId: backnoteTabId,
           type: 'popup', // OR REGULAR WINDOW???
-          height: 1000,
-          width: 400,
+          height: 720,
+          width: 480,
         });
     }
     else
@@ -48,8 +48,8 @@ function createOrSwitchToBacknoteTab()
         {
           url: './edit-note.html',
           type: 'popup', // OR REGULAR WINDOW????
-          height: 1000,
-          width: 400,
+          height: 720,
+          width: 480,
         });
     }
   });
