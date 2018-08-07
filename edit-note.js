@@ -89,10 +89,20 @@ function renderTextCb()
   document.execCommand('paste');
 
   // Setting empty space to cb (so we can paste only once)
-  setStringToClipboard(' ');
+  // setStringToClipboard(' ');
+
+  DataTransferItemList.clear();
 
   // add an empty separator line
   notepadDivElement.innerText += '\n';
+
+  ///////////////////////////////////////////////////////////////
+  
+  console.log();
+
+
+
+
 }
 
 
