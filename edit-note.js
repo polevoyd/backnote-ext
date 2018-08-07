@@ -28,7 +28,7 @@ function setEndOfContenteditable(contentEditableElement)
     selection.addRange(range);
   }
   else if(document.selection)
-  { 
+  {
     // for IE
     //Create a range (a range is a like the selection but invisible)
     range = document.body.createTextRange();
@@ -81,7 +81,7 @@ function renderTextCb()
 {
   // find element to add text to
   var notepadArea = document.getElementsByClassName('notepad')[0];
-  
+
   // set caret to the end of that element
   setEndOfContenteditable(notepadArea);
 
@@ -93,29 +93,15 @@ function renderTextCb()
 
   // add an empty separator line
   notepadDivElement.innerText += '\n';
-
-  ///////////////////////////////////////////////////////////////
-  
-
-
-
-
-
 }
 
 
-/////////////////////////////////////////////////////////////////////
 
 
-
-
-
-
-
-
-
-
-
+function pasteData()
+{
+  window.execCommand('paste');
+}
 
 
 
@@ -152,7 +138,7 @@ function printPdf()
 // clearButton.addEventListener('click', clearText);
 
 // render from a clipboard on a mouseover
-notepadDivElement.addEventListener('mouseover', renderTextCb);
+// notepadDivElement.addEventListener('mouseover', renderTextCb);
 
 
 
@@ -161,28 +147,28 @@ notepadDivElement.addEventListener('mouseover', renderTextCb);
 /*-----------------------------------------------------------------*/
 
 
-document.addEventListener('paste', function (e) 
+const stopPasting = event => 
 {
-  var tmpClipboardData = e.clipboardData.getData('text/plain');
+  const data = event.clipboardData.getData('text');
 
-  // if (tmpClipboardData !== ' ')
-  // {
-  //   // find element to add text to
-  //   var notepadArea = document.getElementsByClassName('notepad')[0];
-  
-  //   // set caret to the end of that element
-  //   setEndOfContenteditable(notepadArea);
+  if (data === ' ')
+  {
+    return event.preventDefault();
+  }
+  else
+  {
+    // paste data
+    notepadDivElement.innerText += data;
 
-  //   // paste data
-  //   document.execCommand('paste');
+    // Setting empty space to cb (so we can paste only once)
+    setStringToClipboard(' ');
 
-  //   // add an empty separator line
-  //   notepadDivElement.innerText += '\n';
+    // move caret to a new line two times
+    notepadDivElement.innerText += '\n\n';
+  }
 
-  // }
+};
 
-  console.log(e.clipboardData.getData('text/plain'));
-
-
-
-});
+document.addEventListener('paste', stopPasting);
+// render from a clipboard on a mouseover
+notepadDivElement.addEventListener('mouseover', stopPasting);
