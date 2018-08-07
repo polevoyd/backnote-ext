@@ -172,8 +172,3 @@ downloadButton.addEventListener('click', downloadTxt);
 
 
 
-
-
-
-
-
