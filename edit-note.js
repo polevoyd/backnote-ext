@@ -8,7 +8,7 @@ var downloadButton = document.getElementById('downloadButton');
 notepadDivElement.innerText += '\n';
 
 /*-----------------------------------------------------------------*/
-/*-----------------defining all the functions----------------------*/
+/*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 
 // move caret to end of contenteditable
@@ -43,8 +43,8 @@ function setEndOfContenteditable(contentEditableElement)
     range.select();
   }
 }
-/*-----------------------------------------------------------------*/
 
+/*-----------------------------------------------------------------*/
 // set an string to a clipboard
 function setStringToClipboard(str)
 {
@@ -78,7 +78,6 @@ function setStringToClipboard(str)
 }
 
 /*-----------------------------------------------------------------*/
-
 // paste a data
 function pasteData()
 {
@@ -110,17 +109,7 @@ const stopPasting = event =>
     notepadDivElement.innerText += '\n\n';
   }
 };
-/*-----------------------------------------------------------------*/
 
-// print or save as pdf
-function printPdf()
-{
-  downloadButton.style.display='none';
-
-  window.print();
-  downloadButton.style.display='inline-block';
-
-}
 /*-----------------------------------------------------------------*/
 // download note as backnote.txt 
 function downloadTxt()
@@ -150,16 +139,6 @@ document.addEventListener('paste', stopPasting);
 document.addEventListener('mouseover', pasteData);
 // adding a listener to downloadButton
 downloadButton.addEventListener('click', downloadTxt);
-
-//////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
 
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/

@@ -1,7 +1,7 @@
 'use strict';
 
 /*-----------------------------------------------------------------*/
-/*-----------------defining all the functions----------------------*/
+/*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 
 // move existing backnote tab to last place or create a new
@@ -43,7 +43,6 @@ function createOrSwitchToBacknoteTab()
     {
       // IF PAGE NOT EXIST - CREATING IT
       var newBacknoteId = undefined;
-
       // create a new tab
       var newBacknoteTab = browser.tabs.create({url: './edit-note.html'});
       // find ID of last tab (or current tab)
