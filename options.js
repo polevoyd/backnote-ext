@@ -1,34 +1,47 @@
 'use strict';
 
-// name of our command
-var commandName = 'backnote-text';
+// name of command
+const commandName = 'backnote-text';
 
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-
-// updating a hotkeys by taking value from a textbox
-
-function updateShortcut() 
+// getting current value and put in a textbox
+async function updateUI() 
 {
-  browser.commands.update(
+  let commands = await browser.commands.getAll();
+  for (command of commands) 
+  {
+    if (command.name === commandName) 
     {
-      name: commandName,
-      shortcut: document.querySelector('#shortcut').value
-    });
+      document.querySelector('#shortcut').value = command.shortcut;
+    }
+  }
 }
 
-// Reset the shortcut and update the textbox.
-
-function resetShortcut() 
+// updating a hotkeys to value in a box
+async function updateShortcut() 
 {
-  browser.commands.reset(commandName);
+  await browser.commands.update(
+    {
+    name: commandName,
+    shortcut: document.querySelector('#shortcut').value
+  });
 }
 
-// Handle update and reset button clicks
-document.querySelector('#update').addEventListener('click', updateShortcut);
-document.querySelector('#reset').addEventListener('click', resetShortcut);
+// reset a hotkeys
+async function resetShortcut() 
+{
+  await browser.commands.reset(commandName);
+  updateUI();
+}
+
+// updating page when it loads
+document.addEventListener('DOMContentLoaded', updateUI);
+
+// set listeners to update and reset buttons
+document.querySelector('#update').addEventListener('click', updateShortcut)
+document.querySelector('#reset').addEventListener('click', resetShortcut)
 
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
+
+
