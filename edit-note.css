@@ -2,6 +2,7 @@
 *
 {
   outline: 0;
+  outline: 3px solid orange;
 }
 
 body 
@@ -12,19 +13,17 @@ body
   text-align: center;
   margin: 1em;
 
-
+  /* overflow: hidden; */
 }
 
 .notepad 
 {
   min-height: 480px;
-  max-width: 480px;
+  min-width: 100px;
   text-align: left;
  
   word-wrap: break-word;
 
-  width:100%;
-  height:100%;
 }
 
 
