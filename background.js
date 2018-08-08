@@ -1,7 +1,7 @@
 'use strict';
 
 /*-----------------------------------------------------------------*/
-/*-----------------defining all the functions----------------------*/
+/*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 
 // move existing backnote tab to last place or create a new
@@ -34,23 +34,29 @@ function createOrSwitchToBacknoteTab()
       browser.windows.create(
         {
           tabId: backnoteTabId,
-          type: 'popup', // OR REGULAR WINDOW???
+          type: 'popup',
           height: 720,
-          width: 480,
+          width: 540,
         });
     }
     else
     {
       // IF PAGE NOT EXIST - CREATING IT
-      // browser.tabs.create({url: '/edit-note.html'});
-
-      browser.windows.create(
-        {
-          url: './edit-note.html',
-          type: 'popup', // OR REGULAR WINDOW????
-          height: 720,
-          width: 480,
-        });
+      var newBacknoteId = undefined;
+      // create a new tab
+      var newBacknoteTab = browser.tabs.create({url: './edit-note.html'});
+      // find ID of last tab (or current tab)
+      newBacknoteTab.then(function(tab)
+      {
+        // create a window from it
+        browser.windows.create(
+          {
+            tabId: tab.id,
+            type: 'popup',
+            height: 720,
+            width: 540,
+          });
+      });
     }
   });
 }

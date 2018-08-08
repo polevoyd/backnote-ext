@@ -1,38 +1,47 @@
-'use strict';
 
-// name of our command
-var commandName = 'backnote-text';
+const commandName = 'backnote';
 
 /*-----------------------------------------------------------------*/
-/*-----------------defining all the functions----------------------*/
+/*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 
-// updating a hotkeys by taking value from a textbox
-
-function updateShortcut() 
+// updating UI and put current 'backnote' hotkeys to textbox
+async function updateUI() 
 {
-  browser.commands.update(
+  let commands = await browser.commands.getAll();
+  for (command of commands) 
+  {
+    if (command.name === commandName) 
     {
-      name: commandName,
-      shortcut: document.querySelector('#shortcut').value
-    });
+      document.querySelector('#shortcut').value = command.shortcut;
+    }
+  }
 }
 
-// Reset the shortcut and update the textbox.
-
-function resetShortcut() 
+// change hotkeys to what currently in textbox
+async function updateShortcut() 
 {
-  browser.commands.reset(commandName);
+  await browser.commands.update(
+    {
+    name: commandName,
+    shortcut: document.querySelector('#shortcut').value
+  });
 }
 
-// Handle update and reset button clicks
+// reset hotkeys and set default
+async function resetShortcut() 
+{
+  await browser.commands.reset(commandName);
+  updateUI();
+}
+
+// updating page when it loads
+document.addEventListener('DOMContentLoaded', updateUI);
+
+// listeners for a buttons reset and update
 document.querySelector('#update').addEventListener('click', updateShortcut);
 document.querySelector('#reset').addEventListener('click', resetShortcut);
 
 /*-----------------------------------------------------------------*/
-/*------------------end of function definitions--------------------*/
 /*-----------------------------------------------------------------*/
-
-//TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST
-//TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST
-//TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST*TEST
+/*-----------------------------------------------------------------*/

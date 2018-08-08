@@ -8,43 +8,10 @@ var downloadButton = document.getElementById('downloadButton');
 notepadDivElement.innerText += '\n';
 
 /*-----------------------------------------------------------------*/
-/*-----------------defining all the functions----------------------*/
+/*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 
-// move caret to end of contenteditable
-function setEndOfContenteditable(contentEditableElement)
-{
-  var range,selection;
-  if(document.createRange)
-  {
-    //Create a range (a range is a like the selection but invisible)
-    range = document.createRange();
-    //Select the entire contents of the element with the range
-    range.selectNodeContents(contentEditableElement);
-    //collapse the range to the end point. false means collapse to end rather than the start
-    range.collapse(false);
-    //get the selection object (allows you to change selection)
-    selection = window.getSelection();
-    //remove any selections already made
-    selection.removeAllRanges();
-    //make the range you have just created the visible selection
-    selection.addRange(range);
-  }
-  else if(document.selection)
-  {
-    // for IE
-    //Create a range (a range is a like the selection but invisible)
-    range = document.body.createTextRange();
-    //Select the entire contents of the element with the range
-    range.moveToElementText(contentEditableElement);
-    //collapse the range to the end point. false means collapse to end rather than the start
-    range.collapse(false);
-    //Select the range (make it the visible selection
-    range.select();
-  }
-}
 /*-----------------------------------------------------------------*/
-
 // set an string to a clipboard
 function setStringToClipboard(str)
 {
@@ -78,10 +45,10 @@ function setStringToClipboard(str)
 }
 
 /*-----------------------------------------------------------------*/
-
 // paste a data
 function pasteData()
 {
+  notepadDivElement.focus();
   document.execCommand('Paste');
 }
 
@@ -110,17 +77,7 @@ const stopPasting = event =>
     notepadDivElement.innerText += '\n\n';
   }
 };
-/*-----------------------------------------------------------------*/
 
-// print or save as pdf
-function printPdf()
-{
-  downloadButton.style.display='none';
-
-  window.print();
-  downloadButton.style.display='inline-block';
-
-}
 /*-----------------------------------------------------------------*/
 // download note as backnote.txt 
 function downloadTxt()
@@ -150,16 +107,6 @@ document.addEventListener('paste', stopPasting);
 document.addEventListener('mouseover', pasteData);
 // adding a listener to downloadButton
 downloadButton.addEventListener('click', downloadTxt);
-
-//////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
 
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/

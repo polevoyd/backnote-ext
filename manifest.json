@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "backnote",
-  "description": "Press Ctrl+Shift+V to open backnote tab.",
+  "description": "Copying text snippets made easy. Call a tab on hotkeys or command menu icon, then highlight text to copy and hover over a backnote tab to paste it.",
   "version": "1.0",
   "homepage_url": "https://github.com/polevoyd/backnote-ext",
 
@@ -36,10 +36,10 @@
 
   "commands": 
   {
-    "backnote-text": 
+    "backnote": 
     {
       "suggested_key": { "default": "Ctrl+Shift+V" },
-      "description": "Open Backnote"
+      "description": "Sending request to open a backnote tab"
     }
   },
 
