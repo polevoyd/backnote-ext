@@ -1,9 +1,11 @@
-'use strict';
 
-// name of command
-const commandName = 'backnote-text';
+const commandName = 'backnote';
 
-// getting current value and put in a textbox
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+
+// updating UI and put current 'backnote' hotkeys to textbox
 async function updateUI() 
 {
   let commands = await browser.commands.getAll();
@@ -16,7 +18,7 @@ async function updateUI()
   }
 }
 
-// updating a hotkeys to value in a box
+// change hotkeys to what currently in textbox
 async function updateShortcut() 
 {
   await browser.commands.update(
@@ -26,7 +28,7 @@ async function updateShortcut()
   });
 }
 
-// reset a hotkeys
+// reset hotkeys and set default
 async function resetShortcut() 
 {
   await browser.commands.reset(commandName);
@@ -36,12 +38,10 @@ async function resetShortcut()
 // updating page when it loads
 document.addEventListener('DOMContentLoaded', updateUI);
 
-// set listeners to update and reset buttons
-document.querySelector('#update').addEventListener('click', updateShortcut)
-document.querySelector('#reset').addEventListener('click', resetShortcut)
+// listeners for a buttons reset and update
+document.querySelector('#update').addEventListener('click', updateShortcut);
+document.querySelector('#reset').addEventListener('click', resetShortcut);
 
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
-
-
