@@ -18,18 +18,6 @@ function copySelection()
 }
 //---------------------------------------------------------------------
 
-// Add copySelection() as a listener to '`' button.
-document.addEventListener('keydown', (event) => 
-{
-  const keyName = event.key;
-
-  // a key to do a copy (default - `)
-  if (keyName == '`')
-  {
-    copySelection();
-  }
-});
-
 // Add copySelection() as a listener to mouseup events.
 document.addEventListener('mouseup', copySelection);
 
