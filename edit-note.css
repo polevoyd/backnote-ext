@@ -2,7 +2,6 @@
 *
 {
   outline: 0;
-  outline: 3px solid orange;
 }
 
 body 
@@ -13,17 +12,15 @@ body
   text-align: center;
   margin: 1em;
 
-  /* overflow: hidden; */
 }
 
 .notepad 
 {
-  min-height: 480px;
-  min-width: 100px;
+  min-width: 200px;
   text-align: left;
  
   word-wrap: break-word;
-
+  min-height: 620px;
 }
 
 
