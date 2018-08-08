@@ -81,6 +81,7 @@ function setStringToClipboard(str)
 // paste a data
 function pasteData()
 {
+  notepadDivElement.focus();
   document.execCommand('Paste');
 }
 
