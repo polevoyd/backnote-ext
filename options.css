@@ -1,18 +1,6 @@
-
 body
 {
     height: 50px;
     width: 400px;
     margin: 10px;
-}
-
-button
-{
-    margin: 5px;
-}
-
-label
-{
-    margin-left: 5px;
-    margin-right: 5px;
 }

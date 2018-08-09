@@ -4,6 +4,7 @@
   "description": "Copying text snippets made easy. Call a tab on hotkeys or command menu icon, then highlight text to copy and hover over a backnote tab to paste it.",
   "version": "1.0",
   "homepage_url": "https://polevoyd.com",
+  "options_page": "options.html",
 
   "icons": 
   {
@@ -32,11 +33,6 @@
       "suggested_key": { "default": "Ctrl+Shift+V" },
       "description": "Sending request to open a backnote tab"
     }
-  },
-
-  "options_ui": 
-  {
-    "page": "options.html"
   },
 
   "content_scripts": 
