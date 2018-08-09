@@ -20,6 +20,8 @@ function pasteData()
 // download note as backnote.txt
 function downloadTxt()
 {
+  // get a name for a file (default will be backnote.txt)
+  var tempFilename = document.getElementById('filenameInput').value;
   // get a text
   let textFromNotepad = notepadDivElement.innerText;
   // create a Blob object from it
@@ -30,7 +32,7 @@ function downloadTxt()
   chrome.downloads.download(
     {
       url: tempURL,
-      filename: 'backnote.txt'
+      filename: tempFilename
     });
 }
 
