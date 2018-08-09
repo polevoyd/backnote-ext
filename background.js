@@ -1,4 +1,5 @@
 
+var currentState = false;
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
@@ -50,11 +51,50 @@ function createOrSwitchToBacknoteTab()
 
 //--------------------------------------------------------------------
 // adding listener to our button on top right
-chrome.browserAction.onClicked.addListener(createOrSwitchToBacknoteTab);
+// chrome.browserAction.onClicked.addListener(createOrSwitchToBacknoteTab);
 
-// set listener to open a tab with notes
-chrome.commands.onCommand.addListener(createOrSwitchToBacknoteTab);
+// // set listener to open a tab with notes
+// chrome.commands.onCommand.addListener(createOrSwitchToBacknoteTab);
 
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
+
+// TODO
+// function to attach and detach listener depending on currentStateIsOn
+function switchCurrentState()
+{
+
+  // console.log(chrome.commands.onCommand);
+  // if on - then turn off
+  if (currentState)
+  {
+    chrome.commands.onCommand.removeListener(createOrSwitchToBacknoteTab);
+    currentState = false;
+
+
+    chrome.browserAction.setIcon({path:"debuggerContinue.png"});
+
+  }
+  else
+  {
+    // set listener to open a tab with notes
+    chrome.commands.onCommand.addListener(createOrSwitchToBacknoteTab);
+    currentState = true;
+
+
+    chrome.browserAction.setIcon({path:"debuggerContinue.png"});
+
+  }
+}
+
+
+
+
+
+
+
+
+
+// test? 
+chrome.browserAction.onClicked.addListener(switchCurrentState);
