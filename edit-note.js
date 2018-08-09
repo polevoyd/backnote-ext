@@ -3,8 +3,10 @@
 var notepadDivElement = document.getElementsByClassName('notepad')[0];
 var downloadButton = document.getElementById('downloadButton');
 
+/*-----------------------------------------------------------------*/
 // previous paste to not paste duplicates
 var previousPaste = '';
+
 /*-----------------------------------------------------------------*/
 // first line just an empty one
 notepadDivElement.innerText += '\n';
@@ -42,7 +44,6 @@ document.addEventListener('paste', function(e)
 {
   // data to paste
   var data = e.clipboardData.getData('text/plain');
-
   // check if previous one is not the same
   if (data !== previousPaste)
   {

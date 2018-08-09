@@ -1,9 +1,7 @@
-
 // current toggle state: true - active, false - not active
 var currentState = true;
 
 /*-----------------------------------------------------------------*/
-
 // move existing backnote tab to last place or create a new
 function createOrSwitchToBacknoteTab()
 {
@@ -50,7 +48,6 @@ function createOrSwitchToBacknoteTab()
 }
 
 /*-----------------------------------------------------------------*/
-
 // function to attach and detach listener depending on currentStateIsOn
 function switchCurrentState()
 {
@@ -62,7 +59,7 @@ function switchCurrentState()
     // change current state
     currentState = false;
     // change icon on top to red
-    chrome.browserAction.setIcon({path:'debuggerContinue.png'});
+    chrome.browserAction.setIcon({path:'./images/icon_off.png'});
   }
   else
   {
@@ -71,12 +68,11 @@ function switchCurrentState()
     // change current state
     currentState = true;
     // change icon on top to green
-    chrome.browserAction.setIcon({path:'debuggerContinue.png'});
+    chrome.browserAction.setIcon({path:'./images/icon_on.png'});
   }
 }
-
+/*-----------------------------------------------------------------*/
 // attach listener to upper right icon to toggle extension
 chrome.browserAction.onClicked.addListener(switchCurrentState);
-
 // set listener to open a tab with notes
 chrome.commands.onCommand.addListener(createOrSwitchToBacknoteTab);
