@@ -1,7 +1,7 @@
 
-var currentState = false;
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
+// current toggle state: true - active, false - not active
+var currentState = true;
+
 /*-----------------------------------------------------------------*/
 
 // move existing backnote tab to last place or create a new
@@ -49,52 +49,34 @@ function createOrSwitchToBacknoteTab()
   });
 }
 
-//--------------------------------------------------------------------
-// adding listener to our button on top right
-// chrome.browserAction.onClicked.addListener(createOrSwitchToBacknoteTab);
-
-// // set listener to open a tab with notes
-// chrome.commands.onCommand.addListener(createOrSwitchToBacknoteTab);
-
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
 /*-----------------------------------------------------------------*/
 
-// TODO
 // function to attach and detach listener depending on currentStateIsOn
 function switchCurrentState()
 {
-
   // console.log(chrome.commands.onCommand);
   // if on - then turn off
   if (currentState)
   {
     chrome.commands.onCommand.removeListener(createOrSwitchToBacknoteTab);
+    // change current state
     currentState = false;
-
-
-    chrome.browserAction.setIcon({path:"debuggerContinue.png"});
-
+    // change icon on top to red
+    chrome.browserAction.setIcon({path:'debuggerContinue.png'});
   }
   else
   {
     // set listener to open a tab with notes
     chrome.commands.onCommand.addListener(createOrSwitchToBacknoteTab);
+    // change current state
     currentState = true;
-
-
-    chrome.browserAction.setIcon({path:"debuggerContinue.png"});
-
+    // change icon on top to green
+    chrome.browserAction.setIcon({path:'debuggerContinue.png'});
   }
 }
 
-
-
-
-
-
-
-
-
-// test? 
+// attach listener to upper right icon to toggle extension
 chrome.browserAction.onClicked.addListener(switchCurrentState);
+
+// set listener to open a tab with notes
+chrome.commands.onCommand.addListener(createOrSwitchToBacknoteTab);
