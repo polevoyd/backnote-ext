@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "backnote",
-  "description": "Copying text snippets made easy. Call a tab on hotkeys or command menu icon, then highlight text to copy and hover over a backnote tab to paste it.",
+  "description": "Copying text snippets made easy. Call a tab on hotkeys and copy/paste text with just moving cursor.",
   "version": "1.0",
   "homepage_url": "https://polevoyd.com",
   "options_page": "options.html",
