@@ -6,10 +6,10 @@ Backnote is fast and easy way to improve your productivity. Make a notes on a fl
 <p>Activate in one click, make a note and save it in one click, too.</p>
 
 🛴 Easy-to-use
-Quick mouse movements instead of cascade of hotkeys and clicks.
+<p>Quick mouse movements instead of cascade of hotkeys and clicks.</p>
 
 🏁 Fast
-Light and simple substitution for a notepad in your browser.
+<p>Light and simple substitution for a notepad in your browser.</p>
 
 
 ###### How to use:
