@@ -12,13 +12,6 @@ var previousPaste = '';
 notepadDivElement.innerText += '\n';
 
 /*-----------------------------------------------------------------*/
-// paste a data
-// function pasteData()
-// {
-//   document.execCommand('Paste');
-// }
-
-/*-----------------------------------------------------------------*/
 // download note as backnote.txt
 function downloadTxt()
 {
