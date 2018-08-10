@@ -23,13 +23,13 @@ Backnote is fast and easy way to improve your productivity. Make a notes on a fl
 4. 💾 Click 'Save' when you done to download note with optional name, or 'backnote.txt' by default
 
 
-
+<br>
 <p>* You can change a hotkeys in Extensions -> Keyboard Shortcuts menu.</p>
 
 <p>** Once you highlighted text and released left mouse button - text is copied. Now you just need to hover cursor over a backnote tab to paste it</p>
 
 <p>*** This extension is free and doesn't contain any ads.</p>
-
+<br>
 
 👨‍🎨 *Dmitry Polevoy*
 📨 *dmitry.polevoy@yahoo.com*
