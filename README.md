@@ -12,7 +12,7 @@ Backnote is fast and easy way to improve your productivity. Make a notes on a fl
 <p>Light and simple substitution for a notepad in your browser.</p>
 
 
-###### How to use:
+##### How to use:
 
 1. 💡 Activate extension by clicking icon in top right corner
 
