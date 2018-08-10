@@ -1,8 +1,5 @@
-'use strict';
-
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
+// current toggle state: true - active, false - not active
+var currentState = true;
 
 // move existing backnote tab to last place or create a new
 function createOrSwitchToBacknoteTab()
@@ -26,10 +23,6 @@ function createOrSwitchToBacknoteTab()
     // if ID is not undefined
     if (backnoteTabId)
     {
-      // moving backnote tab to last position
-      var moving = browser.tabs.move(backnoteTabId, {index: -1});
-
-      // TODO: CORRECT SIZE AND ALIGNMENT AFTER OPENING
       // to create a new window and put existing backnote tab in there
       browser.windows.create(
         {
@@ -61,13 +54,32 @@ function createOrSwitchToBacknoteTab()
   });
 }
 
-//--------------------------------------------------------------------
-// adding listener to our button on top right
-browser.browserAction.onClicked.addListener(createOrSwitchToBacknoteTab);
+/*-----------------------------------------------------------------*/
+// function to attach and detach listener depending on currentStateIsOn
+function switchCurrentState()
+{
+  // if on - then turn off
+  if (currentState)
+  {
+    browser.commands.onCommand.removeListener(createOrSwitchToBacknoteTab);
+    // change current state
+    currentState = false;
+    // change icon on top to red
+    browser.browserAction.setIcon({path:'./images/icon_off.png'});
+  }
+  else
+  {
+    // set listener to open a tab with notes
+    browser.commands.onCommand.addListener(createOrSwitchToBacknoteTab);
+    // change current state
+    currentState = true;
+    // change icon on top to green
+    browser.browserAction.setIcon({path:'./images/icon_on.png'});
+  }
+}
 
+/*-----------------------------------------------------------------*/
+// attach listener to upper right icon to toggle extension
+browser.browserAction.onClicked.addListener(switchCurrentState);
 // set listener to open a tab with notes
 browser.commands.onCommand.addListener(createOrSwitchToBacknoteTab);
-
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/

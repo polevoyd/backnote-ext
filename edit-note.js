@@ -1,4 +1,3 @@
-'use strict';
 
 var notepadDivElement = document.getElementsByClassName('notepad')[0];
 var downloadButton = document.getElementById('downloadButton');
@@ -6,10 +5,6 @@ var downloadButton = document.getElementById('downloadButton');
 /*-----------------------------------------------------------------*/
 // first line just an empty one
 notepadDivElement.innerText += '\n';
-
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
 
 /*-----------------------------------------------------------------*/
 // set an string to a clipboard
@@ -79,9 +74,11 @@ const stopPasting = event =>
 };
 
 /*-----------------------------------------------------------------*/
-// download note as backnote.txt 
+// download note as backnote.txt
 function downloadTxt()
 {
+  // get a name for a file (default will be backnote.txt)
+  var tempFilename = document.getElementById('filenameInput').value;
   // get a text
   let textFromNotepad = notepadDivElement.innerText;
   // create a Blob object from it
@@ -92,13 +89,10 @@ function downloadTxt()
   browser.downloads.download(
     {
       url: tempURL,
-      filename: 'backnote.txt'
+      filename: tempFilename
     });
 }
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
+
 /*-----------------------------------------------------------------*/
 // listeners:
 // on paste go through our filter
@@ -107,7 +101,3 @@ document.addEventListener('paste', stopPasting);
 document.addEventListener('mouseover', pasteData);
 // adding a listener to downloadButton
 downloadButton.addEventListener('click', downloadTxt);
-
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
