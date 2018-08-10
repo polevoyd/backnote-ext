@@ -1,6 +1,7 @@
 # Backnote
 Browser extension for making a quick background notes 
 Backnote is fast and easy way to improve your productivity. Make a notes on a fly by doing copy and paste without any keys, just by moving cursor over. Build a sheet from each session and save it as text file in one click.
+<br></br>
 
 ##### 🍏 Minimalistic
 <p>Activate in one click, make a note and save it in one click, too.</p>
