@@ -1,9 +1,6 @@
 
+// command hotkeys attached to
 const commandName = 'backnote';
-
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
 
 // updating UI and put current 'backnote' hotkeys to textbox
 async function updateUI() 
@@ -41,7 +38,3 @@ document.addEventListener('DOMContentLoaded', updateUI);
 // listeners for a buttons reset and update
 document.querySelector('#update').addEventListener('click', updateShortcut);
 document.querySelector('#reset').addEventListener('click', resetShortcut);
-
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
-/*-----------------------------------------------------------------*/
