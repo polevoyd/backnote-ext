@@ -23,7 +23,7 @@ How to use:
 💾 Click 'Save' when you done to download note with optional name, or 'backnote.txt' by default
 
 
-* You can change a hotkeys in Extensions -> Keyboard Shortcuts menu.
+\* You can change a hotkeys in Extensions -> Keyboard Shortcuts menu.
 
 ** Once you highlighted text and released left mouse button - text is copied. Now you just need to hover cursor over a backnote tab to paste it
 
