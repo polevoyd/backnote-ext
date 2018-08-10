@@ -76,3 +76,32 @@ function switchCurrentState()
 chrome.browserAction.onClicked.addListener(switchCurrentState);
 // set listener to open a tab with notes
 chrome.commands.onCommand.addListener(createOrSwitchToBacknoteTab);
+
+
+
+
+
+
+
+
+
+// // background-script.js
+
+// browser.runtime.onMessage.addListener(notify);
+
+// function notify(message)
+// {
+//   browser.notifications.create(
+//     {
+//       'type': 'basic',
+//       'iconUrl': browser.extension.getURL('link.png'),
+//       'title': 'You clicked a link!',
+//       'message': message.url
+//     });
+// }
+
+
+
+
+
+

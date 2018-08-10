@@ -13,10 +13,10 @@ notepadDivElement.innerText += '\n';
 
 /*-----------------------------------------------------------------*/
 // paste a data
-function pasteData()
-{
-  document.execCommand('Paste');
-}
+// function pasteData()
+// {
+//   document.execCommand('Paste');
+// }
 
 /*-----------------------------------------------------------------*/
 // download note as backnote.txt
@@ -39,31 +39,23 @@ function downloadTxt()
 }
 
 /*-----------------------------------------------------------------*/
-// Overwrite what is being pasted onto the clipboard.
-document.addEventListener('paste', function(e)
-{
-  // data to paste
-  var data = e.clipboardData.getData('text/plain');
-  // check if previous one is not the same
-  if (data !== previousPaste)
+// recieving data with a key : backnoteData
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse)
   {
+    // get a data
+    var data = request.backnoteData;
+    // check if previous one is not the same
+    if (data !== previousPaste)
+    {
     // paste the data into the document.
-    notepadDivElement.innerText += data;
-    // add an empty line and move caret to new line
-    notepadDivElement.innerText += '\n\n';
-    // set previous
-    previousPaste = data;
-  }
-  else
-  {
-    // Do not paste
-    e.preventDefault();
-  }
-});
+      notepadDivElement.innerText += data;
+      // add an empty line and move caret to new line
+      notepadDivElement.innerText += '\n\n';
+      // set previous
+      previousPaste = data;
+    }
+  });
 
-/*-----------------------------------------------------------------*/
-// listeners:
-// render from a clipboard on a mouseover
-document.addEventListener('mouseover', pasteData);
 // adding a listener to downloadButton
 downloadButton.addEventListener('click', downloadTxt);
