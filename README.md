@@ -12,7 +12,7 @@ Quick mouse movements instead of cascade of hotkeys and clicks.
 Light and simple substitution for a notepad in your browser.
 
 
-How to use:
+###### How to use:
 
 💡 Activate extension by clicking icon in top right corner
 
@@ -30,5 +30,5 @@ How to use:
 *** This extension is free and doesn't contain any ads.
 
 
-👨‍🎨 Dmitry Polevoy
-📨 dmitry.polevoy@yahoo.com
+👨‍🎨 *Dmitry Polevoy*
+📨 *dmitry.polevoy@yahoo.com*
