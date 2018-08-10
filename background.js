@@ -1,5 +1,5 @@
 // current toggle state: true - active, false - not active
-var currentState = false;
+var currentState = true;
 
 /*-----------------------------------------------------------------*/
 // move existing backnote tab to last place or create a new
