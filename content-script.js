@@ -23,7 +23,7 @@ function sendTextToBacknote()
   var selectedText = window.getSelection().toString().trim();
 
   // send it to edit-note.js with key : backnote_data
-  browser.runtime.sendMessage({backnoteData: selectedText}, function(){ console.log('DATA SENT!');});
+  browser.runtime.sendMessage({backnoteData: selectedText}, function(){});
 }
 
 // Add copySelection() as a listener to mouseup events.
