@@ -1,8 +1,7 @@
 
-// command hotkeys attached to
+
 const commandName = 'backnote';
 
-// updating UI and put current 'backnote' hotkeys to textbox
 async function updateUI() 
 {
   let commands = await browser.commands.getAll();
@@ -15,7 +14,6 @@ async function updateUI()
   }
 }
 
-// change hotkeys to what currently in textbox
 async function updateShortcut() 
 {
   await browser.commands.update(
@@ -25,16 +23,13 @@ async function updateShortcut()
   });
 }
 
-// reset hotkeys and set default
 async function resetShortcut() 
 {
   await browser.commands.reset(commandName);
   updateUI();
 }
 
-// updating page when it loads
 document.addEventListener('DOMContentLoaded', updateUI);
 
-// listeners for a buttons reset and update
 document.querySelector('#update').addEventListener('click', updateShortcut);
 document.querySelector('#reset').addEventListener('click', resetShortcut);

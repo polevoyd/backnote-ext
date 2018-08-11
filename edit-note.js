@@ -2,16 +2,10 @@
 var notepadDivElement = document.getElementsByClassName('notepad')[0];
 var downloadButton = document.getElementById('downloadButton');
 
-/*-----------------------------------------------------------------*/
-// previous paste to prevent duplicates
 var previousPaste = '';
 
-/*-----------------------------------------------------------------*/
-// first line just an empty one
 notepadDivElement.innerText += '\n';
 
-/*-----------------------------------------------------------------*/
-// download note as backnote.txt
 function downloadTxt()
 {
   // get a name for a file (default will be backnote.txt)
@@ -30,8 +24,6 @@ function downloadTxt()
     });
 }
 
-/*-----------------------------------------------------------------*/
-// recieving data with a key : backnoteData
 browser.runtime.onMessage.addListener(
   function(request, sender, sendResponse)
   {
@@ -49,5 +41,4 @@ browser.runtime.onMessage.addListener(
     }
   });
 
-// adding a listener to downloadButton
 downloadButton.addEventListener('click', downloadTxt);
