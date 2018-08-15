@@ -1,4 +1,3 @@
-
 // finding elements on a page
 var notepadDivElement = document.getElementsByClassName('notepad')[0];
 var downloadButton = document.getElementById('downloadButton');
@@ -10,13 +9,6 @@ var previousPaste = '';
 /*-----------------------------------------------------------------*/
 // first line just an empty one
 notepadDivElement.innerText += '\n';
-
-/*-----------------------------------------------------------------*/
-// paste a data
-// function pasteData()
-// {
-//   document.execCommand('Paste');
-// }
 
 /*-----------------------------------------------------------------*/
 // download note as backnote.txt
