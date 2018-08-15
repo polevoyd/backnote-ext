@@ -1,5 +1,4 @@
 
-
 const commandName = 'backnote';
 
 async function updateUI() 

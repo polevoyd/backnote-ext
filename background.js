@@ -1,4 +1,3 @@
-
 var currentState = true;
 
 function createOrSwitchToBacknoteTab()

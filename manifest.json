@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Backnote",
   "description": "Copying text snippets made easy. Call a backnote on hotkeys, highlight text to copy and hover over to paste it.",
-  "version": "1.50",
+  "version": "1.60",
   "homepage_url": "https://polevoyd.com",
 
   "applications": 
@@ -57,8 +57,6 @@
   "permissions": 
   [
     "tabs",
-    "clipboardWrite",
-    "clipboardRead",
     "<all_urls>",
     "downloads"
   ]
