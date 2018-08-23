@@ -4,6 +4,8 @@
 
 Backnote is fast and easy way to improve your productivity. Make a notes on a fly by doing copy and paste without any keys, just by moving cursor. Build a sheet from each session and save it as text file in one click.
 <br></br>
+![Like this](https://preview.ibb.co/bLz0my/PREVIEW.jpg)
+<br><br>
 [Install for Chrome](https://chrome.google.com/webstore/detail/backnote/gcikdkpooobdlgkkimomdgochmclliek)
 
 [Install for Firefox](https://addons.mozilla.org/en-US/firefox/addon/backnote/)
