@@ -10,7 +10,7 @@ Backnote is fast and easy way to improve your productivity. Make a notes on a fl
 
 [Install for Firefox](https://addons.mozilla.org/en-US/firefox/addon/backnote/)
 
-[ProductHunt page](https://www.producthunt.com/posts/backnote)
+[Product Hunt page](https://www.producthunt.com/posts/backnote)
 
 
 ##### 🍏 Minimalistic
