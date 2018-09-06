@@ -58,7 +58,7 @@ function switchCurrentState()
     chrome.commands.onCommand.removeListener(createOrSwitchToBacknoteTab);
     // change current state
     currentState = false;
-    // change icon on top to red
+    // change icon on top to off
     chrome.browserAction.setIcon({path:'./images/icon_off.png'});
   }
   else
@@ -70,7 +70,14 @@ function switchCurrentState()
     // change icon on top to green
     chrome.browserAction.setIcon({path:'./images/icon_on.png'});
   }
+
+  // sending updated state to content script
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs)
+  {
+    chrome.tabs.sendMessage(tabs[0].id, {currentStateUpdated: currentState}, function(){});
+  });
 }
+
 /*-----------------------------------------------------------------*/
 // attach listener to upper right icon to toggle extension
 chrome.browserAction.onClicked.addListener(switchCurrentState);
