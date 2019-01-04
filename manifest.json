@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Backnote",
   "description": "Saving text snippets made easy. Call a tab on hotkeys and copy/paste text with just moving cursor.",
-  "version": "1.70",
+  "version": "1.71",
   "homepage_url": "https://polevoyd.com",
   "options_page": "options.html",
 

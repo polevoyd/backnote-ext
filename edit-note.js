@@ -1,27 +1,31 @@
 // finding elements on a page
-var notepadDivElement = document.getElementsByClassName('notepad')[0];
-var downloadButton = document.getElementById('downloadButton');
+let notepadDivElement = document.getElementsByClassName('notepad')[0];
+let downloadButton = document.getElementById('downloadButton');
+
 
 /*-----------------------------------------------------------------*/
 // previous paste to not paste duplicates
-var previousPaste = '';
+let previousPaste = '';
 
 /*-----------------------------------------------------------------*/
 // first line just an empty one
-notepadDivElement.innerText += '\n';
+if (notepadDivElement)
+{
+  notepadDivElement.innerText += '\n';
+}
 
 /*-----------------------------------------------------------------*/
 // download note as backnote.txt
 function downloadTxt()
 {
   // get a name for a file (default will be backnote.txt)
-  var tempFilename = document.getElementById('filenameInput').value;
+  let tempFilename = document.getElementById('filenameInput').value;
   // get a text
   let textFromNotepad = notepadDivElement.innerText;
   // create a Blob object from it
-  var tempBlob = new Blob([textFromNotepad], {type: 'text/plain'});
+  let tempBlob = new Blob([textFromNotepad], {type: 'text/plain'});
   // create a temporary URL
-  var tempURL = URL.createObjectURL(tempBlob);
+  let tempURL = URL.createObjectURL(tempBlob);
   // download that URL
   chrome.downloads.download(
     {
@@ -36,7 +40,7 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse)
   {
     // get a data
-    var data = request.backnoteData;
+    let data = request.backnoteData;
     // check if previous one is not the same
     if (data !== previousPaste)
     {
@@ -50,4 +54,7 @@ chrome.runtime.onMessage.addListener(
   });
 
 // adding a listener to downloadButton
-downloadButton.addEventListener('click', downloadTxt);
+if (downloadButton)
+{
+  downloadButton.addEventListener('click', downloadTxt);
+}

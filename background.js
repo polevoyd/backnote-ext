@@ -1,6 +1,16 @@
 // current toggle state: true - active, false - not active
 var currentState = true;
 
+// change icon on top to off or on depending on currentState
+if (currentState) 
+{
+  chrome.browserAction.setIcon({path:'./images/icon_on.png'});
+}
+else
+{
+  chrome.browserAction.setIcon({path:'./images/icon_off.png'});
+}
+
 /*-----------------------------------------------------------------*/
 // move existing backnote tab to last place or create a new
 function createOrSwitchToBacknoteTab()
